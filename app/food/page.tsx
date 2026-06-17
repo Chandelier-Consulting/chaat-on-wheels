@@ -13,7 +13,7 @@ import {
 import { cateringMoments, dishes, links } from "../components/home/content";
 
 export const metadata: Metadata = {
-  title: "Chaat On Wheels | Food-First Indian Street Food",
+  title: "Chaat On Wheels | Indian Street Food",
   description: "Fresh vegetarian chaat, pav, chai, lassi, catering, and pickup from Chaat On Wheels.",
 };
 
@@ -27,9 +27,9 @@ export default function FoodHomePage() {
         <div className="absolute inset-0 bg-[linear-gradient(105deg,#11100e_0%,rgba(17,16,14,.96)_38%,rgba(17,16,14,.32)_100%)]" />
         <div className="section-shell relative z-10">
           <p className="label-hero text-saffron">Sunnyvale Indian street food</p>
-          <h1 className="display-hero mt-5 max-w-3xl font-display font-black">Fresh chaat. Fast pickup. Big flavor.</h1>
+          <h1 className="display-hero mt-5 max-w-3xl font-display font-black">Chaat, pav, chai, lassi.</h1>
           <p className="mt-7 max-w-xl text-xl font-semibold leading-8 text-white/76">
-            Crisp puri, warm pav, bright chutneys, masala chai, lassi, and vegetarian trays made for the South Bay rush.
+            Vegetarian Indian street food for pickup, catering, and South Bay lunch plans.
           </p>
           <div className="mt-8">
             <ActionLinks tone="dark" menuLabel="Full menu" />
@@ -40,9 +40,9 @@ export default function FoodHomePage() {
       <section className="bg-white py-20">
         <div className="section-shell grid gap-5 md:grid-cols-3">
           {[
-            ["01", "Order pickup", "Start online, then swing through for hot pav and crisp chaat."],
-            ["02", "Browse the menu", "Dahi puri, samosa chaat, vada pav, lassi, chai, sweets, and plates."],
-            ["03", "Cater the table", "Vegetarian street-food trays for offices, parties, and family nights."],
+            ["01", "Choose", "Chaat, pav, sandwiches, sweets, chai, and lassi."],
+            ["02", "Order", "Place pickup online or call the Sunnyvale truck."],
+            ["03", "Cater", "Vegetarian trays for office lunches, parties, and family meals."],
           ].map(([number, title, body]) => (
             <article key={title} className="border-t border-ink/12 pt-5">
               <p className="label-wide text-tamarind">{number}</p>
@@ -57,9 +57,9 @@ export default function FoodHomePage() {
         <div className="section-shell premium-feature-grid">
           <div>
             <p className="label-wide text-tamarind">Signatures</p>
-            <h2 className="display-section mt-4 font-display font-black">The favorites are ready when the craving hits.</h2>
+            <h2 className="display-section mt-4 font-display font-black">A short menu of street-food staples.</h2>
             <p className="mt-6 max-w-xl text-lg font-semibold leading-8 text-muted">
-              Keep it cool with dahi puri, go warm with vada pav, add samosa chaat, and finish with chai or lassi.
+              Dahi puri, vada pav, samosa chaat, chai, and lassi anchor the order.
             </p>
             <div className="mt-8">
               <Link className="rounded-full bg-ink px-6 py-4 text-sm font-black text-white" href="/food/menu">
@@ -87,7 +87,7 @@ export default function FoodHomePage() {
           <ImageFrame src="/catering-chaat.jpg" alt="Catering chaat tray" className="h-96" />
           <div>
             <p className="label-wide text-saffron">Catering</p>
-            <h2 className="display-section mt-4 font-display font-black">Bring the chaat window to the party.</h2>
+            <h2 className="display-section mt-4 font-display font-black">Chaat trays for groups.</h2>
             <div className="mt-6 grid gap-4">
               {cateringMoments.map(([title, body]) => (
                 <div key={title} className="border-t border-white/12 pt-4">
@@ -112,9 +112,9 @@ export default function FoodHomePage() {
         <div className="section-shell premium-feature-grid">
           <div>
             <p className="label-wide text-tamarind">Locations</p>
-            <h2 className="display-section mt-4 font-display font-black">Two South Bay stops. One easy order.</h2>
+            <h2 className="display-section mt-4 font-display font-black">Two South Bay stops.</h2>
             <p className="mt-6 max-w-xl text-lg font-semibold leading-8 text-muted">
-              Call ahead, get directions, or order online before heading to Sunnyvale or San Jose.
+              Call ahead, get directions, or order online before heading over.
             </p>
           </div>
           <LocationCards />

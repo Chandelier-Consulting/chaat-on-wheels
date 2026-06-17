@@ -103,38 +103,38 @@ export const menuCategories = [
 ];
 
 export const cateringMoments = [
-  ["Office Lunch", "Fast vegetarian trays for teams, meetings, and release days."],
-  ["Family Party", "Chaat, pav, lassi, and sweets scaled for a full table."],
-  ["Event Pickup", "Call ahead for timing, tray planning, and pickup details."],
+  ["Office Lunch", "Vegetarian trays for teams and meetings."],
+  ["Family Party", "Chaat, pav, lassi, and sweets for the table."],
+  ["Event Pickup", "Call ahead for timing and tray planning."],
 ];
 
 export const journeyStops = [
   {
     number: "01",
-    label: "Lunch rush",
-    title: "Pav moves fast.",
-    body: "Vada pav, pav bhaji, dabeli, and sandwiches built for quick pickup between meetings.",
+    label: "Lunch",
+    title: "Pav for lunch.",
+    body: "Vada pav, pav bhaji, dabeli, and sandwiches for pickup.",
     image: "/vada-pav.jpg",
   },
   {
     number: "02",
     label: "Chaat window",
     title: "Crunch, chutney, cold yogurt.",
-    body: "Dahi puri and papdi chaat bring the clean, bright street-food hit.",
+    body: "Dahi puri and papdi chaat with yogurt, tamarind, mint, and sev.",
     image: "/dahi-puri.jpg",
   },
   {
     number: "03",
     label: "Chai break",
-    title: "Reset with spice.",
-    body: "Samosa chaat, masala chai, mango lassi, and rose milk for the afternoon crowd.",
+    title: "Chai and lassi.",
+    body: "Samosa chaat, masala chai, mango lassi, and rose milk.",
     image: "/samosa-chaat.jpg",
   },
   {
     number: "04",
-    label: "Catering lane",
-    title: "Party trays without friction.",
-    body: "Office lunch, family pickup, and event trays with direct call and order actions.",
+    label: "Catering",
+    title: "Trays for groups.",
+    body: "Office lunch, family pickup, and event trays by call or online order.",
     image: "/catering-chaat.jpg",
   },
 ];

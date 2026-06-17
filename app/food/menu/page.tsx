@@ -12,7 +12,7 @@ export default function FoodMenuPage() {
       <SiteHeader site="food" active="menu" tone="light" />
       <section className="section-shell pb-12 pt-32">
         <p className="label-hero text-tamarind">Full menu</p>
-        <h1 className="display-section mt-5 max-w-3xl font-display font-black">Chaat, pav, lassi, chai.</h1>
+        <h1 className="display-section mt-5 max-w-3xl font-display font-black">Chaat, pav, chai, lassi.</h1>
         <p className="mt-6 max-w-2xl text-lg font-semibold leading-8 text-muted">
           Browse the core menu before ordering pickup, calling ahead, or heading to the truck.
         </p>

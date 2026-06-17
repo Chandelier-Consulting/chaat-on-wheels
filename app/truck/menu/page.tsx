@@ -12,9 +12,9 @@ export default function TruckMenuPage() {
       <SiteHeader site="truck" active="menu" tone="dark" />
       <section className="section-shell pb-12 pt-32">
         <p className="label-hero text-saffron">Truck menu</p>
-        <h1 className="display-section mt-5 max-w-3xl font-display font-black">Fast orders. Big street-food flavor.</h1>
+        <h1 className="display-section mt-5 max-w-3xl font-display font-black">Chaat, pav, chai, lassi.</h1>
         <p className="mt-6 max-w-2xl text-lg font-semibold leading-8 text-white/68">
-          A practical menu for pickup, truck stops, and quick group orders.
+          Browse the truck menu before ordering pickup, calling ahead, or opening directions.
         </p>
         <div className="mt-8">
           <ActionLinks tone="dark" menuHref="/truck/menu" />

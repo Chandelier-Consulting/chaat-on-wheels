@@ -46,10 +46,10 @@ export function BrandHeader({ tone = "dark", activeVariant }: { tone?: Tone; act
         </Link>
         <div className={`hidden items-center gap-7 label-tight md:flex ${isDark ? "text-white/62" : "text-ink/62"}`}>
           <Link className={navLinkClass("food")} href="/premium" aria-current={activeVariant === "food" ? "page" : undefined}>
-            Food-first page
+            Food
           </Link>
           <Link className={navLinkClass("truck")} href="/journey" aria-current={activeVariant === "truck" ? "page" : undefined}>
-            Truck + map page
+            Truck
           </Link>
           <Link className="transition hover:text-saffron" href="/menu">
             Menu
@@ -219,7 +219,7 @@ export function SiteFooter({ site, tone = "light" }: { site: SiteId; tone?: Tone
             <p className="font-display text-2xl font-black">Chaat On Wheels</p>
           </div>
           <p className={`mt-4 max-w-sm text-sm font-semibold leading-6 ${isDark ? "text-white/62" : "text-muted"}`}>
-            Vegetarian Indian street food for pickup, parties, and South Bay cravings.
+            Vegetarian Indian street food for pickup, parties, and the South Bay.
           </p>
         </div>
         <nav className="grid gap-3 text-sm font-black" aria-label={`${site} footer navigation`}>

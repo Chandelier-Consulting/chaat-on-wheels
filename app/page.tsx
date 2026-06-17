@@ -5,17 +5,17 @@ import { BrandMark, SiteFooter } from "./components/home/HomeShell";
 const options = [
   {
     href: "/food",
-    label: "Homepage option 1",
-    title: "Food-first homepage",
-    body: "A premium food-led page for crisp puri, warm pav, bright chutneys, chai, lassi, and fast pickup.",
+    label: "Food",
+    title: "Menu first",
+    body: "A simple path into chaat, pav, drinks, pickup, and catering.",
     image: "/hero-chaat.jpg",
     accent: "text-saffron",
   },
   {
     href: "/truck",
-    label: "Homepage option 2",
-    title: "Truck + map homepage",
-    body: "A route-led page with a truck visual, embedded Google map, directions, ordering, and catering actions.",
+    label: "Truck",
+    title: "Location first",
+    body: "A direct path to the truck, the map, ordering, and event trays.",
     image: "/vada-pav.jpg",
     accent: "text-chutney",
   },
@@ -40,10 +40,10 @@ export default function Home() {
         <div className="max-w-4xl">
           <p className="label-hero text-saffron">Sunnyvale Indian street food</p>
           <h1 className="display-section mt-5 font-display font-black">
-            Choose the homepage style to preview.
+            Choose how the site should open.
           </h1>
           <p className="mt-6 max-w-2xl text-lg font-semibold leading-8 text-white/68">
-            Both pages use the same Chaat On Wheels menu, ordering, directions, and catering links. The difference is the customer experience.
+            Same menu, ordering, directions, and catering. Different first impression.
           </p>
         </div>
 
@@ -67,7 +67,7 @@ export default function Home() {
                 <h2 className="font-display text-5xl font-black leading-none">{option.title}</h2>
                 <p className="mt-4 text-sm font-semibold leading-6 text-white/66">{option.body}</p>
                 <span className="mt-6 inline-flex rounded-full bg-saffron px-5 py-3 text-sm font-black text-ink">
-                  Open homepage
+                  Open
                 </span>
               </div>
             </Link>

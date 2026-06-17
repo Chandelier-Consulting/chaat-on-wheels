@@ -32,9 +32,9 @@ export default function TruckHomePage() {
             transition={{ duration: shouldReduceMotion ? 0 : 0.68, ease: EASE }}
           >
             <p className="label-hero text-tamarind">Sunnyvale to San Jose</p>
-            <h1 className="display-hero mt-5 max-w-4xl font-display font-black">Your chaat stop is closer than you think.</h1>
+            <h1 className="display-hero mt-5 max-w-4xl font-display font-black">Find the truck. Order chaat.</h1>
             <p className="mt-7 max-w-xl text-xl font-semibold leading-8 text-muted">
-              Find today&apos;s truck, order ahead, grab directions, or bring the same vegetarian favorites to your next event.
+              Use the map for directions, order ahead, or plan vegetarian trays for an event.
             </p>
             <div className="mt-8">
               <ActionLinks tone="light" menuLabel="Truck menu" menuHref="/truck/menu" />
@@ -58,10 +58,10 @@ export default function TruckHomePage() {
         <SideRail label="Stops / 01-04" />
         <div className="section-shell">
           <div className="max-w-3xl">
-            <p className="label-wide text-saffron">Today&apos;s rhythm</p>
-            <h2 className="display-section mt-4 font-display font-black">From lunch rush to party trays.</h2>
+            <p className="label-wide text-saffron">Today</p>
+            <h2 className="display-section mt-4 font-display font-black">Lunch, chai, and catering.</h2>
             <p className="mt-5 text-lg font-semibold leading-8 text-white/70">
-              Start with pav, reset with chai, load up on chaat, and call in catering when the whole group wants in.
+              A practical route through the menu: pav, chaat, drinks, and trays.
             </p>
           </div>
           <div className="mt-12 grid gap-5 md:grid-cols-2">
@@ -92,8 +92,8 @@ export default function TruckHomePage() {
       <section className="bg-saffron py-20 text-ink">
         <div className="section-shell journey-dish-grid">
           <div>
-            <p className="label-wide text-tamarind">Top cravings</p>
-            <h2 className="display-section mt-4 font-display font-black">The quick hits people come back for.</h2>
+            <p className="label-wide text-tamarind">Menu</p>
+            <h2 className="display-section mt-4 font-display font-black">The staples people order most.</h2>
             <Link className="mt-8 inline-flex rounded-full bg-ink px-6 py-4 text-sm font-black text-white" href="/truck/menu">
               View truck menu
             </Link>
@@ -116,9 +116,9 @@ export default function TruckHomePage() {
         <div className="section-shell truck-map-grid">
           <div>
             <p className="label-wide text-tamarind">Find us</p>
-            <h2 className="display-section mt-4 font-display font-black">Get there fast. Eat even faster.</h2>
+            <h2 className="display-section mt-4 font-display font-black">Open the map before you go.</h2>
             <p className="mt-6 max-w-xl text-lg font-semibold leading-8 text-muted">
-              Start with the live Google map, then call, order, or open directions when you are ready to roll.
+              Check the stop, call the truck, order online, or open directions.
             </p>
             <div className="mt-6">
               <LocationCards />
@@ -132,7 +132,7 @@ export default function TruckHomePage() {
         <div className="section-shell flex flex-col justify-between gap-7 md:flex-row md:items-center">
           <div>
             <p className="label-wide text-saffron">Catering</p>
-            <h2 className="mt-3 font-display text-5xl font-black leading-none">Bring Chaat On Wheels to the party.</h2>
+            <h2 className="mt-3 font-display text-5xl font-black leading-none">Vegetarian trays for groups.</h2>
           </div>
           <div className="flex flex-wrap gap-3">
             <a className="rounded-full bg-saffron px-6 py-4 text-sm font-black text-ink" href="tel:+16696498039">
