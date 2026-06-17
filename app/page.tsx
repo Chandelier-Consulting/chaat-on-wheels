@@ -5,17 +5,17 @@ import { BrandMark } from "./components/home/HomeShell";
 const options = [
   {
     href: "/premium",
-    label: "Version A",
-    title: "Premium Editorial",
-    body: "Restrained, image-led, restaurant-brand feel. Best for making Chaat On Wheels feel premium and polished.",
+    label: "Food first",
+    title: "Fresh chaat, fast pickup.",
+    body: "Crisp puri, warm pav, bright chutneys, chai, lassi, and easy ordering from the South Bay truck.",
     image: "/hero-chaat.jpg",
     accent: "text-saffron",
   },
   {
     href: "/journey",
-    label: "Version C",
-    title: "Truck Journey",
-    body: "More ownable and memorable: route motion, sideways progress, Indian color, and professional street-food energy.",
+    label: "Find us",
+    title: "Follow the Chaat On Wheels route.",
+    body: "Check the truck, get directions, order ahead, or book the same street-food favorites for your next event.",
     image: "/vada-pav.jpg",
     accent: "text-chutney",
   },
@@ -38,12 +38,12 @@ export default function Home() {
 
       <section className="section-shell py-16 sm:py-24">
         <div className="max-w-4xl">
-          <p className="label-hero text-saffron">Client homepage review</p>
+          <p className="label-hero text-saffron">Sunnyvale Indian street food</p>
           <h1 className="display-section mt-5 font-display font-black">
-            Two directions. Same conversion spine.
+            Chaat, pav, chai, and catering on wheels.
           </h1>
           <p className="mt-6 max-w-2xl text-lg font-semibold leading-8 text-white/68">
-            Both concepts keep order, menu, directions, call, and catering actions easy. Pick the brand feel first, then refine.
+            Order vegetarian street-food favorites, find the truck, or plan a tray for the whole table.
           </p>
         </div>
 
@@ -67,7 +67,7 @@ export default function Home() {
                 <h2 className="font-display text-5xl font-black leading-none">{option.title}</h2>
                 <p className="mt-4 text-sm font-semibold leading-6 text-white/66">{option.body}</p>
                 <span className="mt-6 inline-flex rounded-full bg-saffron px-5 py-3 text-sm font-black text-ink">
-                  Open concept
+                  Explore
                 </span>
               </div>
             </Link>

@@ -43,10 +43,10 @@ export function BrandHeader({ tone = "dark" }: { tone?: Tone }) {
         </Link>
         <div className={`hidden items-center gap-7 label-tight md:flex ${isDark ? "text-white/62" : "text-ink/62"}`}>
           <Link className="transition hover:text-saffron" href="/premium">
-            Premium
+            Food
           </Link>
           <Link className="transition hover:text-saffron" href="/journey">
-            Journey
+            Truck
           </Link>
           <Link className="transition hover:text-saffron" href="/menu">
             Menu

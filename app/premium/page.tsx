@@ -12,8 +12,8 @@ import {
 import { dishes, links } from "../components/home/content";
 
 export const metadata: Metadata = {
-  title: "Premium Homepage | Chaat On Wheels",
-  description: "Premium editorial homepage concept for Chaat On Wheels.",
+  title: "Chaat On Wheels | Fresh Indian Street Food",
+  description: "Order fresh vegetarian chaat, pav, chai, lassi, and catering from Chaat On Wheels in Sunnyvale and San Jose.",
 };
 
 export default function PremiumHomePage() {
@@ -22,7 +22,7 @@ export default function PremiumHomePage() {
       <BrandHeader tone="dark" />
 
       <section className="premium-hero relative grid min-h-screen items-center overflow-hidden bg-night px-4 pb-28 pt-28 text-white sm:px-6 lg:px-8">
-        <SideRail label="Intro / Premium" />
+        <SideRail label="Order / Chaat" />
         <div className="absolute inset-0">
           <Image
             src="/hero-chaat.jpg"
@@ -38,11 +38,11 @@ export default function PremiumHomePage() {
 
         <div className="section-shell relative z-10">
           <p className="label-hero text-saffron">Sunnyvale Indian street food</p>
-          <h1 className="display-hero mt-5 max-w-4xl font-display font-black">
-            Chaat that looks as good as it hits.
+          <h1 className="display-hero mt-5 max-w-3xl font-display font-black">
+            Fresh chaat. Fast pickup. Big flavor.
           </h1>
           <p className="mt-7 max-w-xl text-xl font-semibold leading-8 text-white/76">
-            A cleaner, more premium home for crisp chaat, pav, chai, catering trays, and fast South Bay pickup.
+            Crisp puri, warm pav, bright chutneys, masala chai, lassi, and vegetarian trays made for the South Bay rush.
           </p>
           <div className="mt-8">
             <ActionLinks tone="dark" />
@@ -58,9 +58,9 @@ export default function PremiumHomePage() {
         <div className="section-shell">
           <div className="grid gap-5 md:grid-cols-3">
             {[
-              ["01", "Order pickup", "Start with the fastest path: order now, then swing through Sunnyvale."],
-              ["02", "View the menu", "Chaat, pav, lassi, chai, sweets, and core vegetarian street-food plates."],
-              ["03", "Cater an event", "Office lunch, parties, family orders, and trays with direct call actions."],
+              ["01", "Order pickup", "Start your order online, then swing through for hot pav and crisp chaat."],
+              ["02", "View the menu", "Browse dahi puri, samosa chaat, vada pav, lassi, chai, sweets, and plates."],
+              ["03", "Cater an event", "Feed the office, party, or family table with vegetarian street-food trays."],
             ].map(([number, title, body]) => (
               <article key={title} className="border-t border-ink/12 pt-5">
                 <p className="label-wide text-tamarind">{number}</p>
@@ -77,9 +77,9 @@ export default function PremiumHomePage() {
         <div className="section-shell premium-feature-grid">
           <div>
             <p className="label-wide text-tamarind">Street eats</p>
-            <h2 className="display-section mt-4 font-display font-black">Built around the dishes people already crave.</h2>
+            <h2 className="display-section mt-4 font-display font-black">The favorites are ready when the craving hits.</h2>
             <p className="mt-6 max-w-xl text-lg font-semibold leading-8 text-muted">
-              The premium direction gives the food room to breathe. Large photography, short copy, and direct actions make it feel expensive without slowing the user down.
+              Start with cool dahi puri, go warm with vada pav, add samosa chaat, and finish with chai or lassi.
             </p>
             <div className="mt-8">
               <ActionLinks tone="light" />
@@ -105,9 +105,9 @@ export default function PremiumHomePage() {
           <ImageFrame src="/catering-chaat.jpg" alt="Catering chaat tray" className="h-96" />
           <div>
             <p className="label-wide text-saffron">Catering</p>
-            <h2 className="display-section mt-4 font-display font-black">Make the party taste like the street.</h2>
+            <h2 className="display-section mt-4 font-display font-black">Bring the chaat window to the party.</h2>
             <p className="mt-6 max-w-xl text-lg font-semibold leading-8 text-white/72">
-              Catering gets a premium treatment: one strong image, direct copy, and obvious call/order paths.
+              Build a vegetarian spread for meetings, birthdays, family nights, and weekend gatherings.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a className="rounded-full bg-saffron px-6 py-4 text-sm font-black text-ink" href="tel:+16696498039">
@@ -125,16 +125,16 @@ export default function PremiumHomePage() {
         <div className="section-shell premium-feature-grid">
           <div>
             <p className="label-wide text-tamarind">Locations</p>
-            <h2 className="display-section mt-4 font-display font-black">Pickup should be obvious.</h2>
+            <h2 className="display-section mt-4 font-display font-black">Two South Bay stops. One easy order.</h2>
             <p className="mt-6 max-w-xl text-lg font-semibold leading-8 text-muted">
-              Two locations, simple phone and directions actions, no buried contact info.
+              Call ahead, get directions, or order online before heading to Sunnyvale or San Jose.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link className="rounded-full bg-ink px-6 py-4 text-sm font-black text-white" href="/journey">
-                Compare journey version
+                Find the truck
               </Link>
               <Link className="rounded-full border border-ink/14 px-6 py-4 text-sm font-black" href="/">
-                Back to chooser
+                More options
               </Link>
             </div>
           </div>

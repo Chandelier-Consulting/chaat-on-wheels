@@ -23,7 +23,7 @@ export default function JourneyHomePage() {
       <BrandHeader tone="light" />
 
       <section className="journey-hero relative grid min-h-screen items-center overflow-hidden bg-cream px-4 pb-24 pt-28 sm:px-6 lg:px-8">
-        <SideRail label="Route / Journey" tone="light" />
+        <SideRail label="Truck / Today" tone="light" />
         <div className="section-shell journey-hero-grid relative z-10">
           <motion.div
             initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
@@ -32,10 +32,10 @@ export default function JourneyHomePage() {
           >
             <p className="label-hero text-tamarind">Sunnyvale to San Jose</p>
             <h1 className="display-hero mt-5 max-w-4xl font-display font-black">
-              The street-food route, made easy.
+              Your chaat stop is closer than you think.
             </h1>
             <p className="mt-7 max-w-xl text-xl font-semibold leading-8 text-muted">
-              More ownable, more memorable: sideways progress, a truck route story, and no-friction CTAs for ordering, directions, and catering.
+              Find today&apos;s truck, order ahead, grab directions, or bring the same vegetarian favorites to your next event.
             </p>
             <div className="mt-8">
               <ActionLinks tone="light" menuLabel="See menu" />
@@ -60,10 +60,10 @@ export default function JourneyHomePage() {
         <SideRail label="Stops / 01-04" />
         <div className="section-shell">
           <div className="max-w-3xl">
-            <p className="label-wide text-saffron">Scroll route</p>
-            <h2 className="display-section mt-4 font-display font-black">A day with Chaat On Wheels.</h2>
+            <p className="label-wide text-saffron">Today&apos;s rhythm</p>
+            <h2 className="display-section mt-4 font-display font-black">From lunch rush to party trays.</h2>
             <p className="mt-5 text-lg font-semibold leading-8 text-white/70">
-              This version keeps the reference-site progress idea, but makes it Indian street food: lunch, chaat, chai, catering.
+              Start with pav, reset with chai, load up on chaat, and call in catering when the whole group wants in.
             </p>
           </div>
 
@@ -96,7 +96,7 @@ export default function JourneyHomePage() {
         <div className="section-shell journey-dish-grid">
           <div>
             <p className="label-wide text-tamarind">Top cravings</p>
-            <h2 className="display-section mt-4 font-display font-black">Menu moments that move people to order.</h2>
+            <h2 className="display-section mt-4 font-display font-black">The quick hits people come back for.</h2>
           </div>
           <div className="grid gap-4">
             {dishes.map((dish) => (
@@ -116,13 +116,13 @@ export default function JourneyHomePage() {
         <div className="section-shell journey-dish-grid">
           <div>
             <p className="label-wide text-tamarind">Find us</p>
-            <h2 className="display-section mt-4 font-display font-black">The route ends with clear actions.</h2>
+            <h2 className="display-section mt-4 font-display font-black">Get there fast. Eat even faster.</h2>
             <p className="mt-6 max-w-xl text-lg font-semibold leading-8 text-muted">
-              This version is more interactive in spirit, but the UX stays direct: call, directions, order.
+              Sunnyvale and San Jose are one tap away, with call, directions, and online ordering kept up front.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link className="rounded-full bg-ink px-6 py-4 text-sm font-black text-white" href="/premium">
-                Compare premium version
+                See signature dishes
               </Link>
               <a className="rounded-full bg-chutney px-6 py-4 text-sm font-black text-white" href={links.order} target="_blank" rel="noreferrer">
                 Order now
@@ -137,14 +137,14 @@ export default function JourneyHomePage() {
         <div className="section-shell flex flex-col justify-between gap-7 md:flex-row md:items-center">
           <div>
             <p className="label-wide text-saffron">Catering</p>
-            <h2 className="mt-3 font-display text-5xl font-black leading-none">Bring the route to the party.</h2>
+            <h2 className="mt-3 font-display text-5xl font-black leading-none">Bring Chaat On Wheels to the party.</h2>
           </div>
           <div className="flex flex-wrap gap-3">
             <a className="rounded-full bg-saffron px-6 py-4 text-sm font-black text-ink" href="tel:+16696498039">
               Call catering
             </a>
             <Link className="rounded-full border border-white/22 px-6 py-4 text-sm font-black" href="/">
-              Back to chooser
+              Explore more
             </Link>
           </div>
         </div>
