@@ -258,6 +258,197 @@ img {
   box-shadow: 0 22px 70px rgba(64, 42, 20, 0.08);
 }
 
+.side-rail {
+  position: absolute;
+  left: 1rem;
+  top: 7rem;
+  z-index: 20;
+  display: none;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.side-rail > span {
+  position: relative;
+  display: block;
+  height: 8rem;
+  width: 2px;
+  overflow: hidden;
+  border-radius: 999px;
+}
+
+.side-rail > span > i {
+  display: block;
+  height: 58%;
+  width: 100%;
+  border-radius: inherit;
+}
+
+.premium-feature-grid,
+.journey-hero-grid,
+.journey-dish-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.premium-dish-row,
+.journey-dish-card,
+.journey-stop-card,
+.home-option-card {
+  overflow: hidden;
+  border-radius: 0.75rem;
+  box-shadow: 0 24px 70px rgba(35, 24, 12, 0.12);
+}
+
+.premium-dish-row,
+.journey-dish-card {
+  display: grid;
+  background: #ffffff;
+  border: 1px solid rgba(23, 18, 13, 0.1);
+}
+
+.journey-stop-card {
+  background: rgba(255, 250, 240, 0.08);
+  border: 1px solid rgba(255, 250, 240, 0.12);
+}
+
+.home-option-card {
+  display: block;
+  background: rgba(255, 250, 240, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.home-option-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(246, 178, 26, 0.45);
+  background: rgba(255, 250, 240, 0.1);
+}
+
+.journey-map {
+  position: relative;
+  min-height: 28rem;
+  overflow: hidden;
+  border-radius: 1rem;
+  background:
+    linear-gradient(90deg, rgba(255, 250, 240, 0.1), rgba(255, 250, 240, 0.4)),
+    linear-gradient(135deg, #0f6b45 0%, #0c5136 100%);
+  box-shadow: 0 28px 90px rgba(15, 81, 54, 0.28);
+}
+
+.journey-hero .display-hero {
+  font-size: clamp(3.75rem, 8vw, 7rem);
+}
+
+.journey-map::before {
+  content: "";
+  position: absolute;
+  inset: 1.25rem;
+  border: 1px solid rgba(255, 250, 240, 0.16);
+  border-radius: 0.75rem;
+}
+
+.route-curve {
+  position: absolute;
+  right: 7rem;
+  top: 4rem;
+  height: 18rem;
+  width: 15rem;
+  border-right: 8px dashed rgba(255, 250, 240, 0.56);
+  border-top: 8px dashed rgba(255, 250, 240, 0.56);
+  border-radius: 0 12rem 0 0;
+}
+
+.route-pin {
+  position: absolute;
+  height: 1.6rem;
+  width: 1.6rem;
+  border: 5px solid #fffaf0;
+  border-radius: 999px;
+  background: var(--rose);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.route-pin-one {
+  right: 20rem;
+  top: 3.4rem;
+}
+
+.route-pin-two {
+  right: 6.2rem;
+  top: 20.4rem;
+}
+
+.truck-illustration {
+  position: absolute;
+  bottom: 5rem;
+  right: 3.5rem;
+  width: min(18rem, 58vw);
+  transform: rotate(-3deg);
+}
+
+.truck-body {
+  position: relative;
+  height: 9.5rem;
+  border: 8px solid #fffaf0;
+  border-radius: 1.1rem 1.1rem 0.75rem 0.75rem;
+  background: var(--saffron);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
+}
+
+.truck-body::before,
+.truck-body::after {
+  content: "";
+  position: absolute;
+  bottom: -1.35rem;
+  height: 2rem;
+  width: 2rem;
+  border: 6px solid #fffaf0;
+  border-radius: 999px;
+  background: var(--ink);
+}
+
+.truck-body::before {
+  left: 2rem;
+}
+
+.truck-body::after {
+  right: 2rem;
+}
+
+.truck-body > span {
+  position: absolute;
+  left: 2rem;
+  top: 4.8rem;
+  color: #fffaf0;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 1.7rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.truck-window-panel {
+  position: absolute;
+  left: 1.6rem;
+  right: 1.6rem;
+  top: 1.3rem;
+  height: 2.6rem;
+  border-radius: 0.5rem;
+  background: var(--night);
+  box-shadow: inset 5rem 0 0 rgba(255, 250, 240, 0.9);
+}
+
 .menu-card-media {
   display: grid;
   border-bottom: 1px solid var(--border);
@@ -292,9 +483,18 @@ img {
     grid-template-columns: 1fr auto;
     gap: 1.5rem;
   }
+
+  .premium-dish-row,
+  .journey-dish-card {
+    grid-template-columns: 190px 1fr;
+  }
 }
 
 @media (min-width: 1024px) {
+  .side-rail {
+    display: flex;
+  }
+
   .hero-copy-grid {
     grid-template-columns: 0.9fr 1.1fr;
     align-items: center;
@@ -321,6 +521,17 @@ img {
 
   .menu-category-nav {
     flex-direction: column;
+  }
+
+  .premium-feature-grid,
+  .journey-dish-grid {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: center;
+  }
+
+  .journey-hero-grid {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    align-items: center;
   }
 }
 
