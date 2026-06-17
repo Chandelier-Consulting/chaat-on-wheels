@@ -50,7 +50,7 @@ export default function Home() {
 
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
           {options.map((option) => (
-            <RevealItem key={option.href} variant="softScale" amount={0.36}>
+            <RevealItem key={option.href} variant="softScale">
               <MotionLink href={option.href} className="home-option-card group">
                 <div className="relative h-80 overflow-hidden">
                   <Image

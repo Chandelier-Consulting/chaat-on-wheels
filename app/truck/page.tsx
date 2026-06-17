@@ -81,7 +81,7 @@ export default function TruckHomePage() {
                 initial={shouldReduceMotion ? false : { opacity: 0, y: 34 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 whileHover={shouldReduceMotion ? undefined : { y: -4, scale: 1.01 }}
-                viewport={{ once: true, amount: 0.24 }}
+                viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: shouldReduceMotion ? 0 : 0.55, delay: shouldReduceMotion ? 0 : index * 0.06, ease: EASE }}
               >
                 <Image src={stop.image} alt={stop.title} width={900} height={650} quality={85} className="h-64 w-full object-cover" />
@@ -110,7 +110,7 @@ export default function TruckHomePage() {
           </div>
           <div className="grid gap-4">
             {dishes.map((dish) => (
-              <RevealItem key={dish.name} variant="softScale" amount={0.36}>
+              <RevealItem key={dish.name} variant="softScale">
                 <article className="journey-dish-card">
                   <Image src={dish.image} alt={dish.name} width={700} height={500} quality={85} className="h-36 w-full rounded-md object-cover sm:h-full" />
                   <div className="p-5">

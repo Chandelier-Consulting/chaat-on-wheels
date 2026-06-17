@@ -78,7 +78,7 @@ export default function FoodHomePage() {
           </div>
           <div className="grid gap-4">
             {dishes.map((dish) => (
-              <RevealItem key={dish.name} variant="softScale" amount={0.36}>
+              <RevealItem key={dish.name} variant="softScale">
                 <article className="premium-dish-row">
                   <Image src={dish.image} alt={dish.name} width={700} height={500} quality={85} className="h-36 w-full rounded-md object-cover sm:h-full" />
                   <div className="p-5">

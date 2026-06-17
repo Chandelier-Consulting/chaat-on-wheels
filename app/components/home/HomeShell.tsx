@@ -298,7 +298,7 @@ export function LocationCards({ tone = "light" }: { tone?: Tone }) {
   return (
     <div className="grid gap-4">
       {locations.map((location) => (
-        <RevealItem key={location.city} variant="softScale" amount={0.36}>
+        <RevealItem key={location.city} variant="softScale">
           <section
             className={`rounded-lg p-5 shadow-xl ring-1 ${
               tone === "dark" ? "bg-cream text-ink ring-white/10" : "bg-white text-ink ring-ink/10"
@@ -333,7 +333,7 @@ export function MenuShowcase({ mode = "food" }: { mode?: SiteId }) {
   return (
     <div className="grid gap-6">
       {menuCategories.map((category) => (
-        <RevealItem key={category.name} variant="softScale" amount={0.26}>
+        <RevealItem key={category.name} variant="softScale">
           <section className={isTruck ? "truck-menu-section" : "food-menu-section"}>
             <div className="menu-card-media">
               <Image

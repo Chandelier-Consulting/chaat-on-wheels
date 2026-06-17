@@ -44,7 +44,7 @@ export function MotionSection({
       variants={variant === "softScale" ? softScale : rise}
       initial={shouldReduceMotion ? false : "hidden"}
       whileInView="visible"
-      viewport={{ once: true, amount: 0.18 }}
+      viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: shouldReduceMotion ? 0 : 0.68, delay, ease: EASE_OUT_EXPO }}
       {...props}
     >
@@ -103,7 +103,7 @@ export function RevealItem({
   children,
   className,
   variant = "rise",
-  amount = 0.28,
+  amount = 0.2,
   ...props
 }: ComponentProps<typeof motion.div> & {
   children: ReactNode;

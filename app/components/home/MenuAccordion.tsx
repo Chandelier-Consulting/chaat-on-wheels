@@ -18,29 +18,18 @@ export function MenuAccordion({ items, isTruck }: { items: MenuItem[]; isTruck: 
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <motion.div
-      className={`divide-y ${isTruck ? "divide-white/10" : "divide-border"} px-4 py-2 sm:px-8`}
-      initial={shouldReduceMotion ? false : "hidden"}
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      variants={{
-        hidden: {},
-        visible: { transition: { staggerChildren: 0.06 } },
-      }}
-    >
+    <div className={`divide-y ${isTruck ? "divide-white/10" : "divide-border"} px-4 py-2 sm:px-8`}>
       {items.map((item, index) => {
         const isActive = active === index;
 
         return (
           <motion.article
             key={item.name}
-            layout
             onHoverStart={() => setActive(index)}
             onHoverEnd={() => setActive(null)}
-            variants={{
-              hidden: { opacity: 0, y: 18 },
-              visible: { opacity: 1, y: 0 },
-            }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: shouldReduceMotion ? 0 : 0.52, ease: EASE_OUT_EXPO }}
             className="py-4"
           >
@@ -50,12 +39,13 @@ export function MenuAccordion({ items, isTruck }: { items: MenuItem[]; isTruck: 
               onClick={() => setActive(isActive ? null : index)}
               onFocus={() => setActive(index)}
               className={`grid w-full gap-4 text-left transition-[grid-template-columns] sm:items-center ${
-                isActive ? "sm:grid-cols-[7.25rem_1fr_auto]" : "sm:grid-cols-[5rem_1fr_auto]"
+                isActive ? "sm:grid-cols-[6.5rem_1fr_auto]" : "sm:grid-cols-[5rem_1fr_auto]"
               }`}
             >
               <motion.div
-                layout
-                className={`relative overflow-hidden rounded-md ${isActive ? "h-28 sm:h-20" : "h-20 sm:h-16"}`}
+                className={`relative overflow-hidden rounded-md transition-[height] duration-300 ${
+                  isActive ? "h-24 sm:h-20" : "h-20 sm:h-16"
+                }`}
                 transition={{ duration: shouldReduceMotion ? 0 : 0.48, ease: EASE_OUT_EXPO }}
               >
                 <Image
@@ -106,6 +96,6 @@ export function MenuAccordion({ items, isTruck }: { items: MenuItem[]; isTruck: 
           </motion.article>
         );
       })}
-    </motion.div>
+    </div>
   );
 }
