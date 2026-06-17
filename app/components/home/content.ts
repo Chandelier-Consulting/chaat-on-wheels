@@ -67,37 +67,37 @@ export const menuCategories = [
     name: "Chaat",
     image: "/dahi-puri.jpg",
     items: [
-      ["Dahi Batata Sev Puri", "$13.79", "Crisp puri with potato, yogurt, chutneys, and sev."],
-      ["Dahi Papdi Chaat", "$11.99", "Papdi, yogurt, chutneys, sev, and spices."],
-      ["Samosa Chaat", "$11.29", "Samosa with chickpeas, yogurt, chutneys, and crunch."],
-      ["Aloo Tikki Chaat", "$11.29", "Potato patties with tangy chaat toppings."],
-      ["Bhel Puri", "$11.29", "Puffed rice, chutneys, onion, herbs, and sev."],
-      ["Pani Puri", "Market", "Crisp puri shells with spiced water and spiced filling."],
+      { name: "Dahi Batata Sev Puri", price: "$13.79", description: "Crisp puri with potato, yogurt, chutneys, and sev.", image: "/dahi-puri.jpg" },
+      { name: "Dahi Papdi Chaat", price: "$11.99", description: "Papdi, yogurt, chutneys, sev, and spices.", image: "/dahi-puri.jpg" },
+      { name: "Samosa Chaat", price: "$11.29", description: "Samosa with chickpeas, yogurt, chutneys, and crunch.", image: "/samosa-chaat.jpg" },
+      { name: "Aloo Tikki Chaat", price: "$11.29", description: "Potato patties with tangy chaat toppings.", image: "/samosa-chaat.jpg" },
+      { name: "Bhel Puri", price: "$11.29", description: "Puffed rice, chutneys, onion, herbs, and sev.", image: "/hero-chaat.jpg" },
+      { name: "Pani Puri", price: "Market", description: "Crisp puri shells with spiced water and spiced filling.", image: "/dahi-puri.jpg" },
     ],
   },
   {
     name: "Pav & Plates",
     image: "/vada-pav.jpg",
     items: [
-      ["Vada Pav", "$7.79", "Mumbai-style potato fritter slider with chutney."],
-      ["Pav Bhaji", "Market", "Buttery pav with mashed vegetable bhaji."],
-      ["Dabeli", "$8.79", "Sweet-spicy street snack with potato filling."],
-      ["Cheese Dabeli", "$10.79", "Dabeli with a richer cheese finish."],
-      ["Kulche Chole", "$12.79", "Soft kulcha with North Indian-style chole."],
-      ["Vegetarian Sandwich", "$11.29", "Indian-style vegetarian sandwich."],
-      ["Paneer Sandwich", "$12.29", "Paneer sandwich with Indian street-food seasoning."],
+      { name: "Vada Pav", price: "$7.79", description: "Mumbai-style potato fritter slider with chutney.", image: "/vada-pav.jpg" },
+      { name: "Pav Bhaji", price: "Market", description: "Buttery pav with mashed vegetable bhaji.", image: "/vada-pav.jpg" },
+      { name: "Dabeli", price: "$8.79", description: "Sweet-spicy street snack with potato filling.", image: "/vada-pav.jpg" },
+      { name: "Cheese Dabeli", price: "$10.79", description: "Dabeli with a richer cheese finish.", image: "/vada-pav.jpg" },
+      { name: "Kulche Chole", price: "$12.79", description: "Soft kulcha with North Indian-style chole.", image: "/samosa-chaat.jpg" },
+      { name: "Vegetarian Sandwich", price: "$11.29", description: "Indian-style vegetarian sandwich.", image: "/vada-pav.jpg" },
+      { name: "Paneer Sandwich", price: "$12.29", description: "Paneer sandwich with Indian street-food seasoning.", image: "/vada-pav.jpg" },
     ],
   },
   {
     name: "Drinks & Sweets",
     image: "/catering-chaat.jpg",
     items: [
-      ["Mango Lassi", "$6.29", "Creamy mango yogurt drink."],
-      ["Masala Chai", "$4.99", "Spiced tea for the snack window."],
-      ["Rose Milk", "$6.29", "Cold rose-flavored milk."],
-      ["Sweet Lassi", "$4.99", "Sweet yogurt drink."],
-      ["Salted Lassi", "$4.99", "Savory salted yogurt drink."],
-      ["Gulab Jamun", "$6.49", "Two-piece syrup-soaked dessert."],
+      { name: "Mango Lassi", price: "$6.29", description: "Creamy mango yogurt drink.", image: "/catering-chaat.jpg" },
+      { name: "Masala Chai", price: "$4.99", description: "Spiced tea for the snack window.", image: "/hero-chaat.jpg" },
+      { name: "Rose Milk", price: "$6.29", description: "Cold rose-flavored milk.", image: "/catering-chaat.jpg" },
+      { name: "Sweet Lassi", price: "$4.99", description: "Sweet yogurt drink.", image: "/catering-chaat.jpg" },
+      { name: "Salted Lassi", price: "$4.99", description: "Savory salted yogurt drink.", image: "/catering-chaat.jpg" },
+      { name: "Gulab Jamun", price: "$6.49", description: "Two-piece syrup-soaked dessert.", image: "/samosa-chaat.jpg" },
     ],
   },
 ];
@@ -106,6 +106,24 @@ export const cateringMoments = [
   ["Office Lunch", "Vegetarian trays for teams and meetings."],
   ["Family Party", "Chaat, pav, lassi, and sweets for the table."],
   ["Event Pickup", "Call ahead for timing and tray planning."],
+];
+
+export const reviews = [
+  {
+    quote: "The dahi puri was crisp, cold, and balanced. Easy pickup and exactly what we wanted for lunch.",
+    name: "Priya S.",
+    context: "Sunnyvale pickup",
+  },
+  {
+    quote: "Vada pav, samosa chaat, and chai all landed well for our office order. Simple, fast, no wasted food.",
+    name: "Arjun M.",
+    context: "Team lunch",
+  },
+  {
+    quote: "Ordered trays for a family gathering. The chaat held up, the portions made sense, and pickup was smooth.",
+    name: "Meera K.",
+    context: "Catering pickup",
+  },
 ];
 
 export const journeyStops = [

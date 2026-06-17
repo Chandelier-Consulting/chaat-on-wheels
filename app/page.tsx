@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BrandMark, SiteFooter } from "./components/home/HomeShell";
+import { MotionGroup, MotionItem, MotionLink, MotionSection } from "./components/home/MotionPrimitives";
 
 const options = [
   {
@@ -28,15 +29,15 @@ export default function Home() {
         <nav className="section-shell flex min-h-16 items-center justify-between gap-5">
           <Link href="/" className="flex items-center gap-3">
             <BrandMark />
-            <span className="font-display text-lg font-black">Chaat On Wheels</span>
+            <span className="whitespace-nowrap font-display text-base font-black sm:text-lg">Chaat On Wheels</span>
           </Link>
-          <Link className="rounded-full bg-saffron px-5 py-3 text-sm font-black text-ink" href="/menu">
+          <Link className="rounded-full bg-saffron px-4 py-3 text-sm font-black text-ink sm:px-5" href="/menu">
             Menu
           </Link>
         </nav>
       </header>
 
-      <section className="section-shell py-16 sm:py-24">
+      <MotionSection className="section-shell py-16 sm:py-24">
         <div className="max-w-4xl">
           <p className="label-hero text-saffron">Sunnyvale Indian street food</p>
           <h1 className="display-section mt-5 font-display font-black">
@@ -47,9 +48,10 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-2">
+        <MotionGroup className="mt-12 grid gap-6 lg:grid-cols-2">
           {options.map((option) => (
-            <Link key={option.href} href={option.href} className="home-option-card group">
+            <MotionItem key={option.href} variant="softScale">
+            <MotionLink href={option.href} className="home-option-card group">
               <div className="relative h-80 overflow-hidden">
                 <Image
                   src={option.image}
@@ -70,10 +72,11 @@ export default function Home() {
                   Open
                 </span>
               </div>
-            </Link>
+            </MotionLink>
+            </MotionItem>
           ))}
-        </div>
-      </section>
+        </MotionGroup>
+      </MotionSection>
       <SiteFooter site="food" tone="dark" />
     </main>
   );

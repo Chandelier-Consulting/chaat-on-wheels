@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { links, locations, menuCategories, siteNav } from "./content";
+import { MenuAccordion } from "./MenuAccordion";
+import { MotionAnchor, MotionGroup, MotionItem, MotionLink } from "./MotionPrimitives";
 
 type Tone = "dark" | "light";
 type SiteId = "food" | "truck";
@@ -42,7 +44,7 @@ export function BrandHeader({ tone = "dark", activeVariant }: { tone?: Tone; act
       <nav className="section-shell flex min-h-16 items-center justify-between gap-5">
         <Link href="/" className="flex items-center gap-3" aria-label="Chaat On Wheels home">
           <BrandMark />
-          <span className="font-display text-lg font-black">Chaat On Wheels</span>
+          <span className="whitespace-nowrap font-display text-base font-black sm:text-lg">Chaat On Wheels</span>
         </Link>
         <div className={`hidden items-center gap-7 label-tight md:flex ${isDark ? "text-white/62" : "text-ink/62"}`}>
           <Link className={navLinkClass("food")} href="/premium" aria-current={activeVariant === "food" ? "page" : undefined}>
@@ -55,14 +57,14 @@ export function BrandHeader({ tone = "dark", activeVariant }: { tone?: Tone; act
             Menu
           </Link>
         </div>
-        <a
+        <MotionAnchor
           href={links.order}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-saffron px-5 text-sm font-black text-ink transition hover:-translate-y-0.5 hover:brightness-105"
+          className="inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-saffron px-4 text-sm font-black text-ink transition hover:-translate-y-0.5 hover:brightness-105 sm:px-5"
         >
           Order now <ArrowIcon />
-        </a>
+        </MotionAnchor>
       </nav>
     </header>
   );
@@ -91,7 +93,7 @@ export function SiteHeader({
       <nav className="section-shell flex min-h-16 items-center justify-between gap-5">
         <Link href={`/${site}`} className="flex items-center gap-3" aria-label="Chaat On Wheels home">
           <BrandMark />
-          <span className="font-display text-lg font-black">Chaat On Wheels</span>
+          <span className="whitespace-nowrap font-display text-base font-black sm:text-lg">Chaat On Wheels</span>
         </Link>
         <div className={`hidden items-center gap-7 label-tight lg:flex ${isDark ? "text-white/62" : "text-ink/62"}`}>
           {nav.map(([label, href]) => {
@@ -109,22 +111,22 @@ export function SiteHeader({
           })}
         </div>
         <div className="flex items-center gap-2">
-          <Link
+          <MotionLink
             href={otherHref}
             className={`hidden rounded-full border px-4 py-3 text-xs font-black uppercase tracking-[0.12em] transition sm:inline-flex ${
               isDark ? "border-white/16 text-white/70 hover:text-white" : "border-ink/12 text-ink/62 hover:text-ink"
             }`}
           >
             {otherSite === "truck" ? "Truck site" : "Food site"}
-          </Link>
-          <a
+          </MotionLink>
+          <MotionAnchor
             href={links.order}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-saffron px-5 text-sm font-black text-ink transition hover:-translate-y-0.5 hover:brightness-105"
+            className="inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-saffron px-4 text-sm font-black text-ink transition hover:-translate-y-0.5 hover:brightness-105 sm:px-5"
           >
             Order now <ArrowIcon />
-          </a>
+          </MotionAnchor>
         </div>
       </nav>
     </header>
@@ -180,28 +182,28 @@ export function ActionLinks({
 
   return (
     <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-      <a
+      <MotionAnchor
         href={links.order}
         target="_blank"
         rel="noreferrer"
         className="cta-shadow inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-saffron px-6 text-sm font-black text-ink transition hover:-translate-y-0.5 hover:brightness-105"
       >
         Order pickup <ArrowIcon />
-      </a>
-      <Link
+      </MotionAnchor>
+      <MotionLink
         href={menuHref}
         className={`inline-flex min-h-12 items-center justify-center rounded-full border px-6 text-sm font-black transition ${secondaryClass}`}
       >
         {menuLabel}
-      </Link>
-      <a
+      </MotionLink>
+      <MotionAnchor
         href={links.sunnyvaleMaps}
         target="_blank"
         rel="noreferrer"
         className={`inline-flex min-h-12 items-center justify-center rounded-full border px-6 text-sm font-black transition ${secondaryClass}`}
       >
         Directions
-      </a>
+      </MotionAnchor>
     </div>
   );
 }
@@ -294,76 +296,67 @@ export function TruckIllustration() {
 
 export function LocationCards({ tone = "light" }: { tone?: Tone }) {
   return (
-    <div className="grid gap-4">
+    <MotionGroup className="grid gap-4">
       {locations.map((location) => (
-        <section
-          key={location.city}
-          className={`rounded-lg p-5 shadow-xl ring-1 ${
-            tone === "dark" ? "bg-cream text-ink ring-white/10" : "bg-white text-ink ring-ink/10"
-          }`}
-        >
-          <p className="label-tight text-tamarind">{location.city}</p>
-          <h3 className="mt-2 font-display text-3xl font-black">{location.address.split(",")[0]}</h3>
-          <p className="mt-3 text-sm font-semibold leading-6 text-muted">{location.address}</p>
-          <p className="mt-4 label-wide text-chutney">{location.hours}</p>
-          <div className="mt-5 grid gap-3 sm:grid-cols-2">
-            <a className="grid min-h-11 place-items-center rounded-full bg-saffron px-4 text-sm font-black text-ink" href={location.tel}>
-              {location.phone}
-            </a>
-            <a
-              className="grid min-h-11 place-items-center rounded-full border border-ink/12 px-4 text-sm font-black"
-              href={location.maps}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Directions
-            </a>
-          </div>
-        </section>
+        <MotionItem key={location.city} variant="softScale">
+          <section
+            className={`rounded-lg p-5 shadow-xl ring-1 ${
+              tone === "dark" ? "bg-cream text-ink ring-white/10" : "bg-white text-ink ring-ink/10"
+            }`}
+          >
+            <p className="label-tight text-tamarind">{location.city}</p>
+            <h3 className="mt-2 font-display text-3xl font-black">{location.address.split(",")[0]}</h3>
+            <p className="mt-3 text-sm font-semibold leading-6 text-muted">{location.address}</p>
+            <p className="mt-4 label-wide text-chutney">{location.hours}</p>
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              <MotionAnchor className="grid min-h-11 place-items-center rounded-full bg-saffron px-4 text-sm font-black text-ink" href={location.tel}>
+                {location.phone}
+              </MotionAnchor>
+              <MotionAnchor
+                className="grid min-h-11 place-items-center rounded-full border border-ink/12 px-4 text-sm font-black"
+                href={location.maps}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Directions
+              </MotionAnchor>
+            </div>
+          </section>
+        </MotionItem>
       ))}
-    </div>
+    </MotionGroup>
   );
 }
 
 export function MenuShowcase({ mode = "food" }: { mode?: SiteId }) {
   const isTruck = mode === "truck";
   return (
-    <div className="grid gap-6">
+    <MotionGroup className="grid gap-6">
       {menuCategories.map((category) => (
-        <section key={category.name} className={isTruck ? "truck-menu-section" : "food-menu-section"}>
-          <div className="menu-card-media">
-            <Image
-              src={category.image}
-              alt={category.name}
-              width={900}
-              height={675}
-              quality={85}
-              className="photo-grade h-56 w-full object-cover md:h-full"
-            />
-            <div className="p-6 sm:p-8">
-              <p className={`label-wide ${isTruck ? "text-saffron" : "text-tamarind"}`}>{category.items.length} items</p>
-              <h2 className="mt-2 font-display text-4xl font-black">{category.name}</h2>
-              <p className={`mt-3 max-w-xl text-sm font-semibold leading-6 ${isTruck ? "text-white/62" : "text-muted"}`}>
-                Current availability can change. Call ahead for specials or larger orders.
-              </p>
+        <MotionItem key={category.name} variant="softScale">
+          <section className={isTruck ? "truck-menu-section" : "food-menu-section"}>
+            <div className="menu-card-media">
+              <Image
+                src={category.image}
+                alt={category.name}
+                width={900}
+                height={675}
+                quality={85}
+                className="photo-grade h-56 w-full object-cover md:h-full"
+              />
+              <div className="p-6 sm:p-8">
+                <p className={`label-wide ${isTruck ? "text-saffron" : "text-tamarind"}`}>{category.items.length} items</p>
+                <h2 className="mt-2 font-display text-4xl font-black">{category.name}</h2>
+                <p className={`mt-3 max-w-xl text-sm font-semibold leading-6 ${isTruck ? "text-white/62" : "text-muted"}`}>
+                  Current availability can change. Call ahead for specials or larger orders.
+                </p>
+              </div>
             </div>
-          </div>
-          <div className={`divide-y ${isTruck ? "divide-white/10" : "divide-border"} px-5 py-2 sm:px-8`}>
-            {category.items.map(([name, price, description]) => (
-              <article key={name} className="menu-item-row py-5">
-                <div>
-                  <h3 className="text-lg font-black">{name}</h3>
-                  <p className={`mt-1 max-w-3xl text-sm font-semibold leading-6 ${isTruck ? "text-white/62" : "text-muted"}`}>
-                    {description}
-                  </p>
-                </div>
-                <p className={`font-mono text-base font-bold sm:text-right ${isTruck ? "text-saffron" : "text-tamarind"}`}>{price}</p>
-              </article>
-            ))}
-          </div>
-        </section>
+            <MenuAccordion items={category.items} isTruck={isTruck} />
+          </section>
+        </MotionItem>
       ))}
-    </div>
+    </MotionGroup>
   );
 }
 
@@ -383,14 +376,14 @@ export function GoogleMapFrame() {
         <p className="mt-2 text-sm font-semibold leading-6 text-muted">
           1101 Lawrence Expressway, Sunnyvale, CA 94089
         </p>
-        <a
+        <MotionAnchor
           className="mt-4 inline-flex rounded-full bg-saffron px-5 py-3 text-sm font-black text-ink"
           href={links.sunnyvaleMaps}
           target="_blank"
           rel="noreferrer"
         >
           Open in Google Maps
-        </a>
+        </MotionAnchor>
       </div>
     </section>
   );
@@ -399,12 +392,12 @@ export function GoogleMapFrame() {
 export function MobileActionBar() {
   return (
     <div className="fixed inset-x-3 bottom-3 z-50 grid grid-cols-2 gap-2 rounded-full border border-white/12 bg-night/92 p-2 shadow-2xl backdrop-blur sm:hidden">
-      <a className="grid min-h-12 place-items-center rounded-full bg-saffron text-sm font-black text-ink" href={links.order} target="_blank" rel="noreferrer">
+      <MotionAnchor className="grid min-h-12 place-items-center rounded-full bg-saffron text-sm font-black text-ink" href={links.order} target="_blank" rel="noreferrer">
         Order
-      </a>
-      <a className="grid min-h-12 place-items-center rounded-full bg-tamarind text-sm font-black text-white" href="tel:+16696498039">
+      </MotionAnchor>
+      <MotionAnchor className="grid min-h-12 place-items-center rounded-full bg-tamarind text-sm font-black text-white" href="tel:+16696498039">
         Call
-      </a>
+      </MotionAnchor>
     </div>
   );
 }

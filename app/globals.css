@@ -55,14 +55,16 @@ body {
   overflow-x: hidden;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 img {
   display: block;
   max-width: 100%;
+}
+
+@layer base {
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 .section-shell {

@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import {
   ActionLinks,
@@ -14,6 +13,8 @@ import {
   TruckIllustration,
 } from "../components/home/HomeShell";
 import { dishes, journeyStops, links } from "../components/home/content";
+import { MotionAnchor, MotionGroup, MotionItem, MotionLink, MotionSection } from "../components/home/MotionPrimitives";
+import { ReviewsCarousel } from "../components/home/ReviewsCarousel";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -31,14 +32,22 @@ export default function TruckHomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: shouldReduceMotion ? 0 : 0.68, ease: EASE }}
           >
-            <p className="label-hero text-tamarind">Sunnyvale to San Jose</p>
-            <h1 className="display-hero mt-5 max-w-4xl font-display font-black">Find the truck. Order chaat.</h1>
-            <p className="mt-7 max-w-xl text-xl font-semibold leading-8 text-muted">
-              Use the map for directions, order ahead, or plan vegetarian trays for an event.
-            </p>
-            <div className="mt-8">
-              <ActionLinks tone="light" menuLabel="Truck menu" menuHref="/truck/menu" />
-            </div>
+            <MotionGroup>
+              <MotionItem>
+                <p className="label-hero text-tamarind">Sunnyvale to San Jose</p>
+              </MotionItem>
+              <MotionItem>
+                <h1 className="display-hero mt-5 max-w-4xl font-display font-black">Find the truck. Order chaat.</h1>
+              </MotionItem>
+              <MotionItem>
+                <p className="mt-7 max-w-xl text-xl font-semibold leading-8 text-muted">
+                  Use the map for directions, order ahead, or plan vegetarian trays for an event.
+                </p>
+              </MotionItem>
+              <MotionItem className="mt-8">
+                <ActionLinks tone="light" menuLabel="Truck menu" menuHref="/truck/menu" />
+              </MotionItem>
+            </MotionGroup>
           </motion.div>
           <motion.div
             className="journey-map"
@@ -54,7 +63,7 @@ export default function TruckHomePage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-night py-24 text-white">
+      <MotionSection className="relative overflow-hidden bg-night py-24 text-white">
         <SideRail label="Stops / 01-04" />
         <div className="section-shell">
           <div className="max-w-3xl">
@@ -64,13 +73,14 @@ export default function TruckHomePage() {
               A practical route through the menu: pav, chaat, drinks, and trays.
             </p>
           </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-2">
+          <MotionGroup className="mt-12 grid gap-5 md:grid-cols-2">
             {journeyStops.map((stop, index) => (
               <motion.article
                 key={stop.title}
                 className="journey-stop-card"
                 initial={shouldReduceMotion ? false : { opacity: 0, y: 34 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                whileHover={shouldReduceMotion ? undefined : { y: -4, scale: 1.01 }}
                 viewport={{ once: true, amount: 0.24 }}
                 transition={{ duration: shouldReduceMotion ? 0 : 0.55, delay: shouldReduceMotion ? 0 : index * 0.06, ease: EASE }}
               >
@@ -85,34 +95,38 @@ export default function TruckHomePage() {
                 </div>
               </motion.article>
             ))}
-          </div>
+          </MotionGroup>
         </div>
-      </section>
+      </MotionSection>
 
-      <section className="bg-saffron py-20 text-ink">
+      <MotionSection className="bg-saffron py-20 text-ink">
         <div className="section-shell journey-dish-grid">
           <div>
             <p className="label-wide text-tamarind">Menu</p>
             <h2 className="display-section mt-4 font-display font-black">The staples people order most.</h2>
-            <Link className="mt-8 inline-flex rounded-full bg-ink px-6 py-4 text-sm font-black text-white" href="/truck/menu">
+            <MotionLink className="mt-8 inline-flex rounded-full bg-ink px-6 py-4 text-sm font-black text-white" href="/truck/menu">
               View truck menu
-            </Link>
+            </MotionLink>
           </div>
-          <div className="grid gap-4">
+          <MotionGroup className="grid gap-4">
             {dishes.map((dish) => (
-              <article key={dish.name} className="journey-dish-card">
-                <Image src={dish.image} alt={dish.name} width={700} height={500} quality={85} className="h-36 w-full rounded-md object-cover sm:h-full" />
-                <div className="p-5">
-                  <h3 className="font-display text-3xl font-black">{dish.name}</h3>
-                  <p className="mt-2 text-sm font-semibold leading-6 text-ink/70">{dish.note}</p>
-                </div>
-              </article>
+              <MotionItem key={dish.name} variant="softScale">
+                <article className="journey-dish-card">
+                  <Image src={dish.image} alt={dish.name} width={700} height={500} quality={85} className="h-36 w-full rounded-md object-cover sm:h-full" />
+                  <div className="p-5">
+                    <h3 className="font-display text-3xl font-black">{dish.name}</h3>
+                    <p className="mt-2 text-sm font-semibold leading-6 text-ink/70">{dish.note}</p>
+                  </div>
+                </article>
+              </MotionItem>
             ))}
-          </div>
+          </MotionGroup>
         </div>
-      </section>
+      </MotionSection>
 
-      <section className="bg-cream py-24">
+      <ReviewsCarousel tone="dark" />
+
+      <MotionSection className="bg-cream py-24">
         <div className="section-shell truck-map-grid">
           <div>
             <p className="label-wide text-tamarind">Find us</p>
@@ -126,24 +140,24 @@ export default function TruckHomePage() {
           </div>
           <GoogleMapFrame />
         </div>
-      </section>
+      </MotionSection>
 
-      <section className="bg-chutney py-20 text-white">
+      <MotionSection className="bg-chutney py-20 text-white">
         <div className="section-shell flex flex-col justify-between gap-7 md:flex-row md:items-center">
           <div>
             <p className="label-wide text-saffron">Catering</p>
             <h2 className="mt-3 font-display text-5xl font-black leading-none">Vegetarian trays for groups.</h2>
           </div>
           <div className="flex flex-wrap gap-3">
-            <a className="rounded-full bg-saffron px-6 py-4 text-sm font-black text-ink" href="tel:+16696498039">
+            <MotionAnchor className="rounded-full bg-saffron px-6 py-4 text-sm font-black text-ink" href="tel:+16696498039">
               Call catering
-            </a>
-            <a className="rounded-full border border-white/22 px-6 py-4 text-sm font-black" href={links.order} target="_blank" rel="noreferrer">
+            </MotionAnchor>
+            <MotionAnchor className="rounded-full border border-white/22 px-6 py-4 text-sm font-black" href={links.order} target="_blank" rel="noreferrer">
               Order online
-            </a>
+            </MotionAnchor>
           </div>
         </div>
-      </section>
+      </MotionSection>
       <SiteFooter site="truck" />
       <MobileActionBar />
     </main>
