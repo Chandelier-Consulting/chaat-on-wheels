@@ -157,7 +157,7 @@ function ActionLinks({ dark = false }: { dark?: boolean }) {
         href={orderLink}
         target="_blank"
         rel="noreferrer"
-        className="cta-shadow inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-saffron px-6 text-sm font-black text-ink transition hover:-translate-y-0.5 hover:brightness-105"
+        className="cta-shadow inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-saffron px-6 text-sm font-black text-ink transition hover:-translate-y-0.5 hover:brightness-105"
       >
         Order now <ArrowIcon />
       </a>
@@ -165,13 +165,13 @@ function ActionLinks({ dark = false }: { dark?: boolean }) {
         href={sunnyvaleMaps}
         target="_blank"
         rel="noreferrer"
-        className={`inline-flex min-h-12 items-center justify-center rounded-full border px-6 text-sm font-black transition ${secondaryClass}`}
+        className={`inline-flex min-h-12 items-center justify-center rounded-lg border px-6 text-sm font-black transition ${secondaryClass}`}
       >
         Directions
       </a>
       <a
         href="/menu"
-        className={`inline-flex min-h-12 items-center justify-center rounded-full border px-6 text-sm font-black transition ${secondaryClass}`}
+        className={`inline-flex min-h-12 items-center justify-center rounded-lg border px-6 text-sm font-black transition ${secondaryClass}`}
       >
         Full menu
       </a>
@@ -196,7 +196,7 @@ function StoryCard({
 
   return (
     <motion.div
-      className="premium-shadow max-w-xl rounded-lg border border-ink/10 bg-cream/95 p-5 text-ink backdrop-blur md:p-7"
+      className="premium-shadow max-w-xl rounded-lg border border-ink/10 bg-cream p-5 text-ink md:p-7"
       initial={shouldReduceMotion ? false : "hidden"}
       whileInView="visible"
       viewport={{ once: false, amount: 0.35 }}
@@ -287,7 +287,7 @@ export default function HomeTruckJourney() {
 
   return (
     <main className="bg-night text-white">
-      <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-night/80 backdrop-blur-xl">
+      <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-night">
         <nav className="section-shell flex min-h-16 items-center justify-between gap-5">
           <a href="#" className="flex items-center gap-3" aria-label="Chaat On Wheels home">
             <span className="grid h-10 w-10 place-items-center rounded-full bg-saffron font-mono text-sm font-black text-ink">CW</span>
@@ -302,7 +302,7 @@ export default function HomeTruckJourney() {
             href={orderLink}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-saffron px-5 text-sm font-black text-ink transition hover:-translate-y-0.5 hover:brightness-105"
+            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-saffron px-5 text-sm font-black text-ink transition hover:-translate-y-0.5 hover:brightness-105"
           >
             Order now <ArrowIcon />
           </a>
@@ -311,8 +311,7 @@ export default function HomeTruckJourney() {
 
       <section ref={ref} id="route" className="truck-window journey-section bg-night">
         <div className="relative z-20 grid min-h-screen items-center overflow-hidden px-4 pb-24 pt-28 sm:px-6 lg:px-8">
-          <div className="hero-glow absolute inset-0" />
-          <div className="hero-grid hero-copy-grid relative mx-auto w-full max-w-6xl">
+          <div className="hero-copy-grid relative mx-auto w-full max-w-6xl">
             <motion.div
               className="max-w-2xl"
               initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
@@ -363,8 +362,6 @@ export default function HomeTruckJourney() {
 
         <div ref={stickyLayerRef} className="sticky top-0 h-screen overflow-hidden">
           <div className="route-backdrop absolute inset-0" />
-          <div className="route-grid-overlay absolute inset-0 opacity-20" />
-          <div className="route-orb absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-saffron/10 bg-saffron/5 blur-3xl" />
 
           <motion.svg
             ref={roadSvgRef}
@@ -375,12 +372,12 @@ export default function HomeTruckJourney() {
             role="img"
             aria-label="Squiggly South Bay route"
           >
-            <path ref={roadPathRef} d={roadPathD} fill="none" stroke="rgba(255,250,240,.14)" strokeLinecap="round" strokeWidth="22" />
+            <path ref={roadPathRef} d={roadPathD} fill="none" stroke="rgba(251,246,234,.14)" strokeLinecap="round" strokeWidth="22" />
             <motion.path
               d={roadPathD}
               fill="none"
               pathLength={roadDraw}
-              stroke="rgba(246,178,26,.76)"
+              stroke="rgba(194,136,58,.76)"
               strokeDasharray="1.2 2.4"
               strokeLinecap="round"
               strokeWidth="1"
@@ -408,7 +405,7 @@ export default function HomeTruckJourney() {
 
         <div className="route-overlap relative z-20">
           <article className="grid min-h-screen items-center px-4 py-24 sm:px-6 lg:px-8">
-            <div className="route-grid route-copy-grid mx-auto w-full max-w-6xl">
+            <div className="route-copy-grid mx-auto w-full max-w-6xl">
               <div className="lg:col-start-1">
                 <StoryCard
                   eyebrow="First stop"
@@ -432,7 +429,7 @@ export default function HomeTruckJourney() {
           </article>
 
           <article className="grid min-h-screen items-center px-4 py-24 sm:px-6 lg:px-8">
-            <div className="route-grid route-copy-grid mx-auto w-full max-w-6xl">
+            <div className="route-copy-grid mx-auto w-full max-w-6xl">
               <div className="grid gap-4 lg:col-start-1">
                 {dailyStops.slice(0, 2).map((item, index) => (
                   <motion.article
@@ -466,14 +463,14 @@ export default function HomeTruckJourney() {
           </article>
 
           <article className="grid min-h-screen items-center px-4 py-24 sm:px-6 lg:px-8">
-            <div className="route-grid route-copy-grid mx-auto w-full max-w-6xl">
+            <div className="route-copy-grid mx-auto w-full max-w-6xl">
               <div className="lg:col-start-1">
                 <StoryCard
                   eyebrow="Afternoon"
                   title="Chai, lassi, second cravings."
                   body="The schedule keeps moving after lunch with warm snacks, cold drinks, and call-ahead pickup."
                 >
-                  <a className="inline-flex min-h-12 items-center justify-center rounded-full bg-chutney px-6 text-sm font-black text-white" href="/menu">
+                  <a className="inline-flex min-h-12 items-center justify-center rounded-lg bg-chutney px-6 text-sm font-black text-white" href="/menu">
                     Open full menu
                   </a>
                 </StoryCard>
@@ -505,14 +502,14 @@ export default function HomeTruckJourney() {
           </article>
 
           <article id="locations" className="grid min-h-screen items-center px-4 py-24 sm:px-6 lg:px-8">
-            <div className="route-grid route-copy-grid mx-auto w-full max-w-6xl">
+            <div className="route-copy-grid mx-auto w-full max-w-6xl">
               <div className="lg:col-start-1">
                 <StoryCard
                   eyebrow="Last stop"
                   title="Pull up or call ahead."
                   body="Sunnyvale is the main listing. San Jose is included from the public Chaat On Wheels profile, with direct phone and map actions."
                 >
-                  <a className="inline-flex min-h-12 items-center justify-center rounded-full bg-chutney px-6 text-sm font-black text-white" href={yelpLink} target="_blank" rel="noreferrer">
+                  <a className="inline-flex min-h-12 items-center justify-center rounded-lg bg-chutney px-6 text-sm font-black text-white" href={yelpLink} target="_blank" rel="noreferrer">
                     Open Yelp
                   </a>
                 </StoryCard>
@@ -535,10 +532,10 @@ export default function HomeTruckJourney() {
                     <p className="mt-3 text-sm font-semibold leading-6 text-muted">{address}</p>
                     <p className="mt-4 label-wide text-tamarind">{hours}</p>
                     <div className="mt-5 grid gap-3 sm:grid-cols-2">
-                      <a className="inline-flex min-h-11 items-center justify-center rounded-full bg-saffron px-4 text-sm font-black text-ink" href={tel}>
+                      <a className="inline-flex min-h-11 items-center justify-center rounded-lg bg-saffron px-4 text-sm font-black text-ink" href={tel}>
                         {phone}
                       </a>
-                      <a className="inline-flex min-h-11 items-center justify-center rounded-full border border-ink/12 px-4 text-sm font-black" href={map} target="_blank" rel="noreferrer">
+                      <a className="inline-flex min-h-11 items-center justify-center rounded-lg border border-ink/12 px-4 text-sm font-black" href={map} target="_blank" rel="noreferrer">
                         Directions
                       </a>
                     </div>
@@ -585,16 +582,16 @@ export default function HomeTruckJourney() {
             <p className="mt-2 text-sm font-semibold text-white/56">Vegetarian Indian street food in the South Bay.</p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <a className="rounded-full bg-saffron px-5 py-3 text-sm font-black text-ink" href={orderLink} target="_blank" rel="noreferrer">Order</a>
-            <a className="rounded-full border border-white/20 px-5 py-3 text-sm font-black text-white" href={yelpLink} target="_blank" rel="noreferrer">Yelp</a>
-            <a className="rounded-full border border-white/20 px-5 py-3 text-sm font-black text-white" href="tel:+16696498039">Call</a>
+            <a className="rounded-lg bg-saffron px-5 py-3 text-sm font-black text-ink" href={orderLink} target="_blank" rel="noreferrer">Order</a>
+            <a className="rounded-lg border border-white/20 px-5 py-3 text-sm font-black text-white" href={yelpLink} target="_blank" rel="noreferrer">Yelp</a>
+            <a className="rounded-lg border border-white/20 px-5 py-3 text-sm font-black text-white" href="tel:+16696498039">Call</a>
           </div>
         </div>
       </footer>
 
-      <div className="fixed inset-x-3 bottom-3 z-50 grid grid-cols-2 gap-2 rounded-full border border-white/12 bg-night/92 p-2 shadow-2xl backdrop-blur sm:hidden">
-        <a className="grid min-h-12 place-items-center rounded-full bg-saffron text-sm font-black text-ink" href={orderLink} target="_blank" rel="noreferrer">Order</a>
-        <a className="grid min-h-12 place-items-center rounded-full bg-tamarind text-sm font-black text-white" href="tel:+16696498039">Call</a>
+      <div className="fixed inset-x-3 bottom-3 z-50 grid grid-cols-2 gap-2 rounded-2xl border border-white/12 bg-night p-2 shadow-2xl sm:hidden">
+        <a className="grid min-h-12 place-items-center rounded-lg bg-saffron text-sm font-black text-ink" href={orderLink} target="_blank" rel="noreferrer">Order</a>
+        <a className="grid min-h-12 place-items-center rounded-lg bg-tamarind text-sm font-black text-white" href="tel:+16696498039">Call</a>
       </div>
     </main>
   );

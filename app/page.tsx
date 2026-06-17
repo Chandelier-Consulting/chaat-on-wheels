@@ -31,7 +31,7 @@ export default function Home() {
             <BrandMark />
             <span className="whitespace-nowrap font-display text-base font-black sm:text-lg">Chaat On Wheels</span>
           </Link>
-          <Link className="rounded-full bg-saffron px-4 py-3 text-sm font-black text-ink sm:px-5" href="/menu">
+          <Link className="rounded-lg bg-saffron px-4 py-3 text-sm font-black text-ink sm:px-5" href="/menu">
             Menu
           </Link>
         </nav>
@@ -68,7 +68,7 @@ export default function Home() {
                 <div className="p-6">
                   <h2 className="font-display text-5xl font-black leading-none">{option.title}</h2>
                   <p className="mt-4 text-sm font-semibold leading-6 text-white/66">{option.body}</p>
-                  <span className="mt-6 inline-flex rounded-full bg-saffron px-5 py-3 text-sm font-black text-ink">
+                  <span className="mt-6 inline-flex rounded-lg bg-saffron px-5 py-3 text-sm font-black text-ink">
                     Open
                   </span>
                 </div>

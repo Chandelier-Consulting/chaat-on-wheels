@@ -74,7 +74,7 @@ export default function FoodHomePage() {
               Dahi puri, vada pav, samosa chaat, chai, and lassi anchor the order.
             </p>
             <div className="mt-8">
-              <MotionLink className="rounded-full bg-saffron px-6 py-4 text-sm font-black text-ink" href="/food/menu">
+              <MotionLink className="rounded-lg bg-saffron px-6 py-4 text-sm font-black text-ink" href="/food/menu">
                 View full menu
               </MotionLink>
             </div>
@@ -115,10 +115,10 @@ export default function FoodHomePage() {
               ))}
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
-              <MotionLink className="rounded-full bg-saffron px-6 py-4 text-sm font-black text-ink" href="/food/catering">
+              <MotionLink className="rounded-lg bg-saffron px-6 py-4 text-sm font-black text-ink" href="/food/catering">
                 Plan catering
               </MotionLink>
-              <MotionAnchor className="rounded-full border border-white/20 px-6 py-4 text-sm font-black text-white" href={links.order} target="_blank" rel="noreferrer">
+              <MotionAnchor className="rounded-lg border border-white/20 px-6 py-4 text-sm font-black text-white" href={links.order} target="_blank" rel="noreferrer">
                 Order online
               </MotionAnchor>
             </div>

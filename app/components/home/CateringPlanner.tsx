@@ -133,7 +133,7 @@ export function CateringPlanner({ variant = "food" }: { variant?: Variant }) {
               <p className="text-xs font-black uppercase tracking-[0.22em] text-white/42">Recommended mix</p>
               <h3 className="mt-2 font-display text-3xl font-black">{occasion.name}</h3>
             </div>
-            <p className="rounded-full border border-white/14 px-4 py-2 text-xs font-black uppercase tracking-[0.14em] text-white/68">
+            <p className="rounded-md border border-white/14 px-4 py-2 text-xs font-black uppercase tracking-[0.1em] text-white/68">
               {lead}
             </p>
           </div>
@@ -166,10 +166,10 @@ export function CateringPlanner({ variant = "food" }: { variant?: Variant }) {
               Ask for trays for {guests} guests: {trays.map((tray) => `${tray.value} ${tray.label.toLowerCase()}`).join(", ")}.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
-              <MotionAnchor className="rounded-full bg-saffron px-5 py-3 text-sm font-black text-ink" href="tel:+16696498039">
+              <MotionAnchor className="rounded-lg bg-saffron px-5 py-3 text-sm font-black text-ink" href="tel:+16696498039">
                 Call catering
               </MotionAnchor>
-              <MotionAnchor className="rounded-full border border-white/18 px-5 py-3 text-sm font-black text-white" href={links.order} target="_blank" rel="noreferrer">
+              <MotionAnchor className="rounded-lg border border-white/18 px-5 py-3 text-sm font-black text-white" href={links.order} target="_blank" rel="noreferrer">
                 Order online
               </MotionAnchor>
             </div>
