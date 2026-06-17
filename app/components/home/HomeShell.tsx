@@ -213,7 +213,11 @@ export function SiteFooter({ site, tone = "light" }: { site: SiteId; tone?: Tone
   const nav = siteNav[site];
 
   return (
-    <footer className={`${isDark ? "bg-night text-white" : "bg-white text-ink"} px-4 py-12 sm:px-6 lg:px-8`}>
+    <footer
+      className={`border-t px-4 py-12 sm:px-6 lg:px-8 ${
+        isDark ? "border-white/10 bg-night text-white" : "border-ink/10 bg-white text-ink"
+      }`}
+    >
       <div className="mx-auto grid max-w-6xl gap-8 border-t border-current/10 pt-8 md:grid-cols-[1.1fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-3">

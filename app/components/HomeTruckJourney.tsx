@@ -199,7 +199,7 @@ function StoryCard({
       className="premium-shadow max-w-xl rounded-lg border border-ink/10 bg-cream p-5 text-ink md:p-7"
       initial={shouldReduceMotion ? false : "hidden"}
       whileInView="visible"
-      viewport={{ once: false, amount: 0.35 }}
+      viewport={{ once: false, amount: 0.4 }}
       variants={cardVariants[align]}
       transition={{ duration: shouldReduceMotion ? 0 : 0.58, ease: EASE_OUT_EXPO }}
     >
@@ -311,6 +311,7 @@ export default function HomeTruckJourney() {
 
       <section ref={ref} id="route" className="truck-window journey-section bg-night">
         <div className="relative z-20 grid min-h-screen items-center overflow-hidden px-4 pb-24 pt-28 sm:px-6 lg:px-8">
+          <div className="hero-pattern absolute inset-0" />
           <div className="hero-copy-grid relative mx-auto w-full max-w-6xl">
             <motion.div
               className="max-w-2xl"
@@ -419,7 +420,7 @@ export default function HomeTruckJourney() {
                 className="photo-grade premium-shadow overflow-hidden rounded-lg border border-white/12 bg-cream p-3 lg:col-start-3"
                 initial={shouldReduceMotion ? false : "hidden"}
                 whileInView="visible"
-                viewport={{ once: false, amount: 0.35 }}
+                viewport={{ once: false, amount: 0.4 }}
                 variants={cardVariants.right}
                 transition={{ duration: shouldReduceMotion ? 0 : 0.58, ease: EASE_OUT_EXPO }}
               >
@@ -437,7 +438,7 @@ export default function HomeTruckJourney() {
                     className="photo-grade premium-shadow stop-card-grid overflow-hidden rounded-lg border border-white/10 bg-cream text-ink"
                     initial={shouldReduceMotion ? false : "hidden"}
                     whileInView="visible"
-                    viewport={{ once: false, amount: 0.3 }}
+                    viewport={{ once: false, amount: 0.4 }}
                     variants={cardVariants.up}
                     transition={{ duration: shouldReduceMotion ? 0 : 0.5, delay: shouldReduceMotion ? 0 : index * 0.08, ease: EASE_OUT_EXPO }}
                   >
@@ -479,7 +480,7 @@ export default function HomeTruckJourney() {
                 className="grid gap-4 lg:col-start-3"
                 initial={shouldReduceMotion ? false : "hidden"}
                 whileInView="visible"
-                viewport={{ once: false, amount: 0.2 }}
+                viewport={{ once: false, amount: 0.4 }}
                 variants={cardVariants.right}
                 transition={{ duration: shouldReduceMotion ? 0 : 0.58, ease: EASE_OUT_EXPO }}
               >
@@ -519,7 +520,7 @@ export default function HomeTruckJourney() {
                 className="grid gap-4 lg:col-start-3"
                 initial={shouldReduceMotion ? false : "hidden"}
                 whileInView="visible"
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: false, amount: 0.4 }}
                 variants={cardVariants.right}
                 transition={{ duration: shouldReduceMotion ? 0 : 0.58, ease: EASE_OUT_EXPO }}
               >

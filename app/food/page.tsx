@@ -27,6 +27,7 @@ export default function FoodHomePage() {
         <SideRail label="Food / Fresh" />
         <Image src="/hero-chaat.jpg" alt="Chaat spread" fill priority quality={92} sizes="100vw" className="object-cover opacity-50" />
         <div className="absolute inset-0 bg-[linear-gradient(105deg,#15120f_0%,rgba(21,18,15,.96)_38%,rgba(21,18,15,.32)_100%)]" />
+        <div className="hero-pattern absolute inset-0" />
         <MotionGroup className="section-shell relative z-10">
           <MotionItem>
             <p className="label-hero text-saffron">Sunnyvale Indian street food</p>
@@ -47,7 +48,7 @@ export default function FoodHomePage() {
 
       <ProofStrip />
 
-      <section className="bg-white py-20">
+      <section className="border-t border-ink/10 bg-white py-20">
         <div className="section-shell grid gap-5 md:grid-cols-3">
           {[
             ["01", "Choose", "Chaat, pav, sandwiches, sweets, chai, and lassi."],
