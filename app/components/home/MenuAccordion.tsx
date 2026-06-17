@@ -14,7 +14,7 @@ type MenuItem = {
 const EASE_OUT_EXPO = [0.16, 1, 0.3, 1] as const;
 
 export function MenuAccordion({ items, isTruck }: { items: MenuItem[]; isTruck: boolean }) {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState<number | null>(null);
   const shouldReduceMotion = useReducedMotion();
 
   return (
@@ -35,6 +35,8 @@ export function MenuAccordion({ items, isTruck }: { items: MenuItem[]; isTruck: 
           <motion.article
             key={item.name}
             layout
+            onHoverStart={() => setActive(index)}
+            onHoverEnd={() => setActive(null)}
             variants={{
               hidden: { opacity: 0, y: 18 },
               visible: { opacity: 1, y: 0 },
@@ -45,12 +47,15 @@ export function MenuAccordion({ items, isTruck }: { items: MenuItem[]; isTruck: 
             <button
               type="button"
               aria-expanded={isActive}
-              onClick={() => setActive(isActive ? -1 : index)}
-              className="grid w-full gap-4 text-left sm:grid-cols-[5rem_1fr_auto] sm:items-center"
+              onClick={() => setActive(isActive ? null : index)}
+              onFocus={() => setActive(index)}
+              className={`grid w-full gap-4 text-left transition-[grid-template-columns] sm:items-center ${
+                isActive ? "sm:grid-cols-[7.25rem_1fr_auto]" : "sm:grid-cols-[5rem_1fr_auto]"
+              }`}
             >
               <motion.div
                 layout
-                className={`relative overflow-hidden rounded-md ${isActive ? "h-44 sm:h-28" : "h-20 sm:h-16"}`}
+                className={`relative overflow-hidden rounded-md ${isActive ? "h-28 sm:h-20" : "h-20 sm:h-16"}`}
                 transition={{ duration: shouldReduceMotion ? 0 : 0.48, ease: EASE_OUT_EXPO }}
               >
                 <Image

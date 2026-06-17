@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BrandMark, SiteFooter } from "./components/home/HomeShell";
-import { MotionGroup, MotionItem, MotionLink, MotionSection } from "./components/home/MotionPrimitives";
+import { MotionLink, RevealItem } from "./components/home/MotionPrimitives";
 
 const options = [
   {
@@ -37,7 +37,7 @@ export default function Home() {
         </nav>
       </header>
 
-      <MotionSection className="section-shell py-16 sm:py-24">
+      <section className="section-shell py-16 sm:py-24">
         <div className="max-w-4xl">
           <p className="label-hero text-saffron">Sunnyvale Indian street food</p>
           <h1 className="display-section mt-5 font-display font-black">
@@ -48,35 +48,35 @@ export default function Home() {
           </p>
         </div>
 
-        <MotionGroup className="mt-12 grid gap-6 lg:grid-cols-2">
+        <div className="mt-12 grid gap-6 lg:grid-cols-2">
           {options.map((option) => (
-            <MotionItem key={option.href} variant="softScale">
-            <MotionLink href={option.href} className="home-option-card group">
-              <div className="relative h-80 overflow-hidden">
-                <Image
-                  src={option.image}
-                  alt={option.title}
-                  fill
-                  priority
-                  quality={92}
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="object-cover transition duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-night via-night/18 to-transparent" />
-                <p className={`absolute left-5 top-5 label-wide ${option.accent}`}>{option.label}</p>
-              </div>
-              <div className="p-6">
-                <h2 className="font-display text-5xl font-black leading-none">{option.title}</h2>
-                <p className="mt-4 text-sm font-semibold leading-6 text-white/66">{option.body}</p>
-                <span className="mt-6 inline-flex rounded-full bg-saffron px-5 py-3 text-sm font-black text-ink">
-                  Open
-                </span>
-              </div>
-            </MotionLink>
-            </MotionItem>
+            <RevealItem key={option.href} variant="softScale" amount={0.36}>
+              <MotionLink href={option.href} className="home-option-card group">
+                <div className="relative h-80 overflow-hidden">
+                  <Image
+                    src={option.image}
+                    alt={option.title}
+                    fill
+                    priority
+                    quality={92}
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    className="object-cover transition duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-night via-night/18 to-transparent" />
+                  <p className={`absolute left-5 top-5 label-wide ${option.accent}`}>{option.label}</p>
+                </div>
+                <div className="p-6">
+                  <h2 className="font-display text-5xl font-black leading-none">{option.title}</h2>
+                  <p className="mt-4 text-sm font-semibold leading-6 text-white/66">{option.body}</p>
+                  <span className="mt-6 inline-flex rounded-full bg-saffron px-5 py-3 text-sm font-black text-ink">
+                    Open
+                  </span>
+                </div>
+              </MotionLink>
+            </RevealItem>
           ))}
-        </MotionGroup>
-      </MotionSection>
+        </div>
+      </section>
       <SiteFooter site="food" tone="dark" />
     </main>
   );

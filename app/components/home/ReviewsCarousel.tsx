@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { reviews } from "./content";
 
@@ -10,18 +10,6 @@ export function ReviewsCarousel({ tone = "light" }: { tone?: "light" | "dark" })
   const [active, setActive] = useState(0);
   const shouldReduceMotion = useReducedMotion();
   const isDark = tone === "dark";
-
-  useEffect(() => {
-    if (shouldReduceMotion) {
-      return;
-    }
-
-    const interval = window.setInterval(() => {
-      setActive((current) => (current + 1) % reviews.length);
-    }, 5200);
-
-    return () => window.clearInterval(interval);
-  }, [shouldReduceMotion]);
 
   const review = reviews[active];
 

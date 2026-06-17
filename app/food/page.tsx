@@ -10,7 +10,7 @@ import {
   SideRail,
 } from "../components/home/HomeShell";
 import { cateringMoments, dishes, links } from "../components/home/content";
-import { MotionAnchor, MotionGroup, MotionItem, MotionLink, MotionSection } from "../components/home/MotionPrimitives";
+import { MotionAnchor, MotionGroup, MotionItem, MotionLink, RevealItem } from "../components/home/MotionPrimitives";
 import { ReviewsCarousel } from "../components/home/ReviewsCarousel";
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function FoodHomePage() {
   return (
     <main className="bg-cream text-ink">
       <SiteHeader site="food" active="home" tone="dark" />
-      <MotionSection className="relative grid min-h-screen items-center overflow-hidden bg-night px-4 pb-28 pt-28 text-white sm:px-6 lg:px-8">
+      <section className="relative grid min-h-screen items-center overflow-hidden bg-night px-4 pb-28 pt-28 text-white sm:px-6 lg:px-8">
         <SideRail label="Food / Fresh" />
         <Image src="/hero-chaat.jpg" alt="Chaat spread" fill priority quality={92} sizes="100vw" className="object-cover opacity-50" />
         <div className="absolute inset-0 bg-[linear-gradient(105deg,#11100e_0%,rgba(17,16,14,.96)_38%,rgba(17,16,14,.32)_100%)]" />
@@ -42,27 +42,27 @@ export default function FoodHomePage() {
             <ActionLinks tone="dark" menuLabel="Full menu" />
           </MotionItem>
         </MotionGroup>
-      </MotionSection>
+      </section>
 
       <section className="bg-white py-20">
-        <MotionGroup className="section-shell grid gap-5 md:grid-cols-3">
+        <div className="section-shell grid gap-5 md:grid-cols-3">
           {[
             ["01", "Choose", "Chaat, pav, sandwiches, sweets, chai, and lassi."],
             ["02", "Order", "Place pickup online or call the Sunnyvale truck."],
             ["03", "Cater", "Vegetarian trays for office lunches, parties, and family meals."],
           ].map(([number, title, body]) => (
-            <MotionItem key={title}>
+            <RevealItem key={title}>
               <article className="border-t border-ink/12 pt-5">
                 <p className="label-wide text-tamarind">{number}</p>
                 <h2 className="mt-4 font-display text-4xl font-black leading-none">{title}</h2>
                 <p className="mt-4 text-sm font-semibold leading-6 text-muted">{body}</p>
               </article>
-            </MotionItem>
+            </RevealItem>
           ))}
-        </MotionGroup>
+        </div>
       </section>
 
-      <MotionSection className="bg-cream py-24">
+      <section className="bg-cream py-24">
         <div className="section-shell premium-feature-grid">
           <div>
             <p className="label-wide text-tamarind">Signatures</p>
@@ -76,9 +76,9 @@ export default function FoodHomePage() {
               </MotionLink>
             </div>
           </div>
-          <MotionGroup className="grid gap-4">
+          <div className="grid gap-4">
             {dishes.map((dish) => (
-              <MotionItem key={dish.name} variant="softScale">
+              <RevealItem key={dish.name} variant="softScale" amount={0.36}>
                 <article className="premium-dish-row">
                   <Image src={dish.image} alt={dish.name} width={700} height={500} quality={85} className="h-36 w-full rounded-md object-cover sm:h-full" />
                   <div className="p-5">
@@ -87,30 +87,30 @@ export default function FoodHomePage() {
                     <p className="mt-2 text-sm font-semibold leading-6 text-muted">{dish.note}</p>
                   </div>
                 </article>
-              </MotionItem>
+              </RevealItem>
             ))}
-          </MotionGroup>
+          </div>
         </div>
-      </MotionSection>
+      </section>
 
       <ReviewsCarousel />
 
-      <MotionSection className="bg-night py-24 text-white">
+      <section className="bg-night py-24 text-white">
         <div className="section-shell premium-feature-grid">
           <ImageFrame src="/catering-chaat.jpg" alt="Catering chaat tray" className="h-96" />
           <div>
             <p className="label-wide text-saffron">Catering</p>
             <h2 className="display-section mt-4 font-display font-black">Chaat trays for groups.</h2>
-            <MotionGroup className="mt-6 grid gap-4">
+            <div className="mt-6 grid gap-4">
               {cateringMoments.map(([title, body]) => (
-                <MotionItem key={title}>
+                <RevealItem key={title}>
                   <div className="border-t border-white/12 pt-4">
                     <h3 className="font-display text-2xl font-black">{title}</h3>
                     <p className="mt-2 text-sm font-semibold leading-6 text-white/66">{body}</p>
                   </div>
-                </MotionItem>
+                </RevealItem>
               ))}
-            </MotionGroup>
+            </div>
             <div className="mt-8 flex flex-wrap gap-3">
               <MotionLink className="rounded-full bg-saffron px-6 py-4 text-sm font-black text-ink" href="/food/catering">
                 Plan catering
@@ -121,9 +121,9 @@ export default function FoodHomePage() {
             </div>
           </div>
         </div>
-      </MotionSection>
+      </section>
 
-      <MotionSection className="bg-white py-24">
+      <section className="bg-white py-24">
         <div className="section-shell premium-feature-grid">
           <div>
             <p className="label-wide text-tamarind">Locations</p>
@@ -134,7 +134,7 @@ export default function FoodHomePage() {
           </div>
           <LocationCards />
         </div>
-      </MotionSection>
+      </section>
       <SiteFooter site="food" />
       <MobileActionBar />
     </main>

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { links, locations, menuCategories, siteNav } from "./content";
 import { MenuAccordion } from "./MenuAccordion";
-import { MotionAnchor, MotionGroup, MotionItem, MotionLink } from "./MotionPrimitives";
+import { MotionAnchor, MotionLink, RevealItem } from "./MotionPrimitives";
 
 type Tone = "dark" | "light";
 type SiteId = "food" | "truck";
@@ -296,9 +296,9 @@ export function TruckIllustration() {
 
 export function LocationCards({ tone = "light" }: { tone?: Tone }) {
   return (
-    <MotionGroup className="grid gap-4">
+    <div className="grid gap-4">
       {locations.map((location) => (
-        <MotionItem key={location.city} variant="softScale">
+        <RevealItem key={location.city} variant="softScale" amount={0.36}>
           <section
             className={`rounded-lg p-5 shadow-xl ring-1 ${
               tone === "dark" ? "bg-cream text-ink ring-white/10" : "bg-white text-ink ring-ink/10"
@@ -322,18 +322,18 @@ export function LocationCards({ tone = "light" }: { tone?: Tone }) {
               </MotionAnchor>
             </div>
           </section>
-        </MotionItem>
+        </RevealItem>
       ))}
-    </MotionGroup>
+    </div>
   );
 }
 
 export function MenuShowcase({ mode = "food" }: { mode?: SiteId }) {
   const isTruck = mode === "truck";
   return (
-    <MotionGroup className="grid gap-6">
+    <div className="grid gap-6">
       {menuCategories.map((category) => (
-        <MotionItem key={category.name} variant="softScale">
+        <RevealItem key={category.name} variant="softScale" amount={0.26}>
           <section className={isTruck ? "truck-menu-section" : "food-menu-section"}>
             <div className="menu-card-media">
               <Image
@@ -354,9 +354,9 @@ export function MenuShowcase({ mode = "food" }: { mode?: SiteId }) {
             </div>
             <MenuAccordion items={category.items} isTruck={isTruck} />
           </section>
-        </MotionItem>
+        </RevealItem>
       ))}
-    </MotionGroup>
+    </div>
   );
 }
 

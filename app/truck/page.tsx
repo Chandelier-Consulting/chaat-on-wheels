@@ -13,7 +13,7 @@ import {
   TruckIllustration,
 } from "../components/home/HomeShell";
 import { dishes, journeyStops, links } from "../components/home/content";
-import { MotionAnchor, MotionGroup, MotionItem, MotionLink, MotionSection } from "../components/home/MotionPrimitives";
+import { MotionAnchor, MotionGroup, MotionItem, MotionLink, RevealItem } from "../components/home/MotionPrimitives";
 import { ReviewsCarousel } from "../components/home/ReviewsCarousel";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -63,7 +63,7 @@ export default function TruckHomePage() {
         </div>
       </section>
 
-      <MotionSection className="relative overflow-hidden bg-night py-24 text-white">
+      <section className="relative overflow-hidden bg-night py-24 text-white">
         <SideRail label="Stops / 01-04" />
         <div className="section-shell">
           <div className="max-w-3xl">
@@ -73,7 +73,7 @@ export default function TruckHomePage() {
               A practical route through the menu: pav, chaat, drinks, and trays.
             </p>
           </div>
-          <MotionGroup className="mt-12 grid gap-5 md:grid-cols-2">
+          <div className="mt-12 grid gap-5 md:grid-cols-2">
             {journeyStops.map((stop, index) => (
               <motion.article
                 key={stop.title}
@@ -95,11 +95,11 @@ export default function TruckHomePage() {
                 </div>
               </motion.article>
             ))}
-          </MotionGroup>
+          </div>
         </div>
-      </MotionSection>
+      </section>
 
-      <MotionSection className="bg-saffron py-20 text-ink">
+      <section className="bg-saffron py-20 text-ink">
         <div className="section-shell journey-dish-grid">
           <div>
             <p className="label-wide text-tamarind">Menu</p>
@@ -108,9 +108,9 @@ export default function TruckHomePage() {
               View truck menu
             </MotionLink>
           </div>
-          <MotionGroup className="grid gap-4">
+          <div className="grid gap-4">
             {dishes.map((dish) => (
-              <MotionItem key={dish.name} variant="softScale">
+              <RevealItem key={dish.name} variant="softScale" amount={0.36}>
                 <article className="journey-dish-card">
                   <Image src={dish.image} alt={dish.name} width={700} height={500} quality={85} className="h-36 w-full rounded-md object-cover sm:h-full" />
                   <div className="p-5">
@@ -118,15 +118,15 @@ export default function TruckHomePage() {
                     <p className="mt-2 text-sm font-semibold leading-6 text-ink/70">{dish.note}</p>
                   </div>
                 </article>
-              </MotionItem>
+              </RevealItem>
             ))}
-          </MotionGroup>
+          </div>
         </div>
-      </MotionSection>
+      </section>
 
       <ReviewsCarousel tone="dark" />
 
-      <MotionSection className="bg-cream py-24">
+      <section className="bg-cream py-24">
         <div className="section-shell truck-map-grid">
           <div>
             <p className="label-wide text-tamarind">Find us</p>
@@ -140,9 +140,9 @@ export default function TruckHomePage() {
           </div>
           <GoogleMapFrame />
         </div>
-      </MotionSection>
+      </section>
 
-      <MotionSection className="bg-chutney py-20 text-white">
+      <section className="bg-chutney py-20 text-white">
         <div className="section-shell flex flex-col justify-between gap-7 md:flex-row md:items-center">
           <div>
             <p className="label-wide text-saffron">Catering</p>
@@ -157,7 +157,7 @@ export default function TruckHomePage() {
             </MotionAnchor>
           </div>
         </div>
-      </MotionSection>
+      </section>
       <SiteFooter site="truck" />
       <MobileActionBar />
     </main>

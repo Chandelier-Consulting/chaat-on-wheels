@@ -99,6 +99,34 @@ export function MotionItem({
   );
 }
 
+export function RevealItem({
+  children,
+  className,
+  variant = "rise",
+  amount = 0.28,
+  ...props
+}: ComponentProps<typeof motion.div> & {
+  children: ReactNode;
+  variant?: "rise" | "softScale";
+  amount?: number;
+}) {
+  const shouldReduceMotion = useReducedMotion();
+
+  return (
+    <motion.div
+      className={className}
+      variants={variant === "softScale" ? softScale : rise}
+      initial={shouldReduceMotion ? false : "hidden"}
+      whileInView="visible"
+      viewport={{ once: true, amount }}
+      transition={{ duration: shouldReduceMotion ? 0 : 0.58, ease: EASE_OUT_EXPO }}
+      {...props}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
 export function MotionLink({
   children,
   className,
