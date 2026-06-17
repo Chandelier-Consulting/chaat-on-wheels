@@ -101,8 +101,8 @@ img {
 
 .display-hero {
   font-family: var(--font-display), Georgia, serif;
-  font-size: clamp(3.15rem, 8.4vw, 7.15rem);
-  line-height: 0.92;
+  font-size: clamp(2.75rem, 5.4vw, 5.25rem);
+  line-height: 0.96;
   letter-spacing: 0;
 }
 
@@ -362,7 +362,7 @@ img {
 }
 
 .journey-hero .display-hero {
-  font-size: clamp(3rem, 6.8vw, 6rem);
+  font-size: clamp(2.4rem, 3.6vw, 4rem);
 }
 
 .journey-map::before {
