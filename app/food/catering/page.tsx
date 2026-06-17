@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { CateringPlanner } from "../../components/home/CateringPlanner";
 import { cateringMoments, links } from "../../components/home/content";
 import { MobileActionBar, SiteFooter, SiteHeader } from "../../components/home/HomeShell";
 import { MotionAnchor, MotionGroup, MotionItem, MotionSection } from "../../components/home/MotionPrimitives";
@@ -33,6 +34,7 @@ export default function FoodCateringPage() {
           <Image src="/catering-chaat.jpg" alt="Catering tray" width={1400} height={980} priority quality={92} className="h-[34rem] w-full rounded-md object-cover" />
         </div>
       </MotionSection>
+      <CateringPlanner variant="food" />
       <MotionGroup className="section-shell grid gap-5 pb-24 md:grid-cols-3">
         {cateringMoments.map(([title, body]) => (
           <MotionItem key={title}>
