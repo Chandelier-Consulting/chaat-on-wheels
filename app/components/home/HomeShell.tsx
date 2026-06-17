@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { links, locations, menuCategories, siteNav } from "./content";
+import { ChiliIcon, CupIcon, LeafIcon, SamosaIcon } from "./Icons";
 import { MenuAccordion } from "./MenuAccordion";
 import { MotionAnchor, MotionLink, RevealItem } from "./MotionPrimitives";
 
@@ -263,19 +264,20 @@ export function SideRail({ label, tone = "dark" }: { label: string; tone?: Tone 
 export function ProofStrip({ tone = "light" }: { tone?: Tone }) {
   const isDark = tone === "dark";
   const items = [
-    ["Vegetarian", "Chaat, pav, drinks, and sweets."],
-    ["Sunnyvale", "Daily pickup window on Lawrence Expressway."],
-    ["Order ahead", "Online pickup and direct phone links."],
-    ["Catering", "Trays for offices, parties, and family meals."],
-  ];
+    ["Vegetarian", "Chaat, pav, drinks, and sweets.", LeafIcon],
+    ["Sunnyvale", "Daily pickup window on Lawrence Expressway.", ChiliIcon],
+    ["Order ahead", "Online pickup and direct phone links.", CupIcon],
+    ["Catering", "Trays for offices, parties, and family meals.", SamosaIcon],
+  ] as const;
 
   return (
     <section className={`${isDark ? "bg-night text-white" : "bg-white text-ink"} py-12`}>
       <div className="section-shell grid gap-4 md:grid-cols-4">
-        {items.map(([title, body]) => (
+        {items.map(([title, body, Icon]) => (
           <RevealItem key={title}>
             <article className={`h-full border-t pt-4 ${isDark ? "border-white/14" : "border-ink/12"}`}>
-              <p className={isDark ? "label-wide text-saffron" : "label-wide text-tamarind"}>{title}</p>
+              <Icon className={`h-5 w-5 ${isDark ? "text-saffron" : "text-tamarind"}`} />
+              <p className={`mt-3 ${isDark ? "label-wide text-saffron" : "label-wide text-tamarind"}`}>{title}</p>
               <p className={`mt-3 text-sm font-semibold leading-6 ${isDark ? "text-white/64" : "text-muted"}`}>
                 {body}
               </p>
@@ -359,11 +361,19 @@ export function LocationCards({ tone = "light" }: { tone?: Tone }) {
   );
 }
 
+const categoryIcons: Record<string, typeof LeafIcon> = {
+  Chaat: SamosaIcon,
+  "Pav & Plates": ChiliIcon,
+  "Drinks & Sweets": CupIcon,
+};
+
 export function MenuShowcase({ mode = "food" }: { mode?: SiteId }) {
   const isTruck = mode === "truck";
   return (
     <div className="grid gap-6">
-      {menuCategories.map((category) => (
+      {menuCategories.map((category) => {
+        const CategoryIcon = categoryIcons[category.name];
+        return (
         <RevealItem key={category.name} variant="softScale">
           <section className={isTruck ? "truck-menu-section" : "food-menu-section"}>
             <div className="menu-card-media">
@@ -377,7 +387,10 @@ export function MenuShowcase({ mode = "food" }: { mode?: SiteId }) {
               />
               <div className="p-6 sm:p-8">
                 <p className={`label-wide ${isTruck ? "text-saffron" : "text-tamarind"}`}>{category.items.length} items</p>
-                <h2 className="mt-2 font-display text-4xl font-black">{category.name}</h2>
+                <h2 className="mt-2 flex items-center gap-3 font-display text-4xl font-black">
+                  {CategoryIcon ? <CategoryIcon className={`h-7 w-7 ${isTruck ? "text-saffron" : "text-tamarind"}`} /> : null}
+                  {category.name}
+                </h2>
                 <p className={`mt-3 max-w-xl text-sm font-semibold leading-6 ${isTruck ? "text-white/62" : "text-muted"}`}>
                   Current availability can change. Call ahead for specials or larger orders.
                 </p>
@@ -386,7 +399,8 @@ export function MenuShowcase({ mode = "food" }: { mode?: SiteId }) {
             <MenuAccordion items={category.items} isTruck={isTruck} />
           </section>
         </RevealItem>
-      ))}
+        );
+      })}
     </div>
   );
 }
