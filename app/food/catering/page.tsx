@@ -22,10 +22,10 @@ export default function FoodCateringPage() {
             Chaat, pav, chai, lassi, and sweets for offices, birthdays, family meals, and weekend gatherings.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <MotionAnchor className="rounded-full bg-saffron px-6 py-4 text-sm font-black text-ink" href="tel:+16696498039">
+            <MotionAnchor className="rounded-lg bg-saffron px-6 py-4 text-sm font-black text-ink" href="tel:+16696498039">
               Call catering
             </MotionAnchor>
-            <MotionAnchor className="rounded-full border border-white/20 px-6 py-4 text-sm font-black" href={links.order} target="_blank" rel="noreferrer">
+            <MotionAnchor className="rounded-lg border border-white/20 px-6 py-4 text-sm font-black" href={links.order} target="_blank" rel="noreferrer">
               Order online
             </MotionAnchor>
           </div>

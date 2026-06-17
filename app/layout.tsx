@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Space_Mono } from "next/font/google";
+import { Hanken_Grotesk, Fraunces, DM_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const hankenGrotesk = Hanken_Grotesk({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
 });
 
-const playfair = Playfair_Display({
+const fraunces = Fraunces({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
 });
 
-const spaceMono = Space_Mono({
+const dmMono = DM_Mono({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "500"],
   variable: "--font-mono",
   display: "swap",
 });
@@ -38,7 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${playfair.variable} ${spaceMono.variable}`}>
+      <body className={`${hankenGrotesk.variable} ${fraunces.variable} ${dmMono.variable}`}>
         {children}
       </body>
     </html>

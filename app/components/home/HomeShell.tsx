@@ -37,8 +37,8 @@ export function BrandHeader({ tone = "dark", activeVariant }: { tone?: Tone; act
 
   return (
     <header
-      className={`fixed left-0 right-0 top-0 z-50 border-b backdrop-blur-xl ${
-        isDark ? "border-white/10 bg-night/82 text-white" : "border-ink/10 bg-cream/88 text-ink"
+      className={`fixed left-0 right-0 top-0 z-50 border-b ${
+        isDark ? "border-white/10 bg-night text-white" : "border-ink/10 bg-cream text-ink"
       }`}
     >
       <nav className="section-shell flex min-h-16 items-center justify-between gap-5">
@@ -61,7 +61,7 @@ export function BrandHeader({ tone = "dark", activeVariant }: { tone?: Tone; act
           href={links.order}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-saffron px-4 text-sm font-black text-ink transition hover:-translate-y-0.5 hover:brightness-105 sm:px-5"
+          className="inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-saffron px-4 text-sm font-black text-ink transition hover:-translate-y-0.5 hover:brightness-105 sm:px-5"
         >
           Order now <ArrowIcon />
         </MotionAnchor>
@@ -86,8 +86,8 @@ export function SiteHeader({
 
   return (
     <header
-      className={`fixed left-0 right-0 top-0 z-50 border-b backdrop-blur-xl ${
-        isDark ? "border-white/10 bg-night/86 text-white" : "border-ink/10 bg-cream/90 text-ink"
+      className={`fixed left-0 right-0 top-0 z-50 border-b ${
+        isDark ? "border-white/10 bg-night text-white" : "border-ink/10 bg-cream text-ink"
       }`}
     >
       <nav className="section-shell flex min-h-16 items-center justify-between gap-5">
@@ -123,7 +123,7 @@ export function SiteHeader({
             href={links.order}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-saffron px-4 text-sm font-black text-ink transition hover:-translate-y-0.5 hover:brightness-105 sm:px-5"
+            className="inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-saffron px-4 text-sm font-black text-ink transition hover:-translate-y-0.5 hover:brightness-105 sm:px-5"
           >
             Order now <ArrowIcon />
           </MotionAnchor>
@@ -144,7 +144,7 @@ export function PreviewSwitcher({ active, tone = "light" }: { active: SiteId; to
 
   return (
     <div
-      className={`fixed left-1/2 top-16 z-40 flex w-[calc(100%-1.5rem)] max-w-xl -translate-x-1/2 items-center justify-center gap-1 rounded-full border p-1 backdrop-blur-xl md:top-20 md:w-auto ${base}`}
+      className={`fixed left-1/2 top-16 z-40 flex w-[calc(100%-1.5rem)] max-w-xl -translate-x-1/2 items-center justify-center gap-1 rounded-full border p-1 md:top-20 md:w-auto ${base}`}
     >
       <Link
         href="/food"
@@ -186,13 +186,13 @@ export function ActionLinks({
         href={links.order}
         target="_blank"
         rel="noreferrer"
-        className="cta-shadow inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-saffron px-6 text-sm font-black text-ink transition hover:-translate-y-0.5 hover:brightness-105"
+        className="cta-shadow inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-saffron px-6 text-sm font-black text-ink transition hover:-translate-y-0.5 hover:brightness-105"
       >
         Order pickup <ArrowIcon />
       </MotionAnchor>
       <MotionLink
         href={menuHref}
-        className={`inline-flex min-h-12 items-center justify-center rounded-full border px-6 text-sm font-black transition ${secondaryClass}`}
+        className={`inline-flex min-h-12 items-center justify-center rounded-lg border px-6 text-sm font-black transition ${secondaryClass}`}
       >
         {menuLabel}
       </MotionLink>
@@ -200,7 +200,7 @@ export function ActionLinks({
         href={links.sunnyvaleMaps}
         target="_blank"
         rel="noreferrer"
-        className={`inline-flex min-h-12 items-center justify-center rounded-full border px-6 text-sm font-black transition ${secondaryClass}`}
+        className={`inline-flex min-h-12 items-center justify-center rounded-lg border px-6 text-sm font-black transition ${secondaryClass}`}
       >
         Directions
       </MotionAnchor>
@@ -336,11 +336,11 @@ export function LocationCards({ tone = "light" }: { tone?: Tone }) {
             <p className="mt-3 text-sm font-semibold leading-6 text-muted">{location.address}</p>
             <p className="mt-4 label-wide text-chutney">{location.hours}</p>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              <MotionAnchor className="grid min-h-11 place-items-center rounded-full bg-saffron px-4 text-sm font-black text-ink" href={location.tel}>
+              <MotionAnchor className="grid min-h-11 place-items-center rounded-lg bg-saffron px-4 text-sm font-black text-ink" href={location.tel}>
                 {location.phone}
               </MotionAnchor>
               <MotionAnchor
-                className="grid min-h-11 place-items-center rounded-full border border-ink/12 px-4 text-sm font-black"
+                className="grid min-h-11 place-items-center rounded-lg border border-ink/12 px-4 text-sm font-black"
                 href={location.maps}
                 target="_blank"
                 rel="noreferrer"
@@ -404,7 +404,7 @@ export function GoogleMapFrame() {
           1101 Lawrence Expressway, Sunnyvale, CA 94089
         </p>
         <MotionAnchor
-          className="mt-4 inline-flex rounded-full bg-saffron px-5 py-3 text-sm font-black text-ink"
+          className="mt-4 inline-flex rounded-lg bg-saffron px-5 py-3 text-sm font-black text-ink"
           href={links.sunnyvaleMaps}
           target="_blank"
           rel="noreferrer"
@@ -418,11 +418,11 @@ export function GoogleMapFrame() {
 
 export function MobileActionBar() {
   return (
-    <div className="fixed inset-x-3 bottom-3 z-50 grid grid-cols-2 gap-2 rounded-full border border-white/12 bg-night/92 p-2 shadow-2xl backdrop-blur sm:hidden">
-      <MotionAnchor className="grid min-h-12 place-items-center rounded-full bg-saffron text-sm font-black text-ink" href={links.order} target="_blank" rel="noreferrer">
+    <div className="fixed inset-x-3 bottom-3 z-50 grid grid-cols-2 gap-2 rounded-2xl border border-white/12 bg-night p-2 shadow-2xl sm:hidden">
+      <MotionAnchor className="grid min-h-12 place-items-center rounded-lg bg-saffron text-sm font-black text-ink" href={links.order} target="_blank" rel="noreferrer">
         Order
       </MotionAnchor>
-      <MotionAnchor className="grid min-h-12 place-items-center rounded-full bg-tamarind text-sm font-black text-white" href="tel:+16696498039">
+      <MotionAnchor className="grid min-h-12 place-items-center rounded-lg bg-tamarind text-sm font-black text-white" href="tel:+16696498039">
         Call
       </MotionAnchor>
     </div>

@@ -99,20 +99,6 @@ img {
   transform: translateZ(0);
 }
 
-.hero-grid {
-  background-image:
-    linear-gradient(rgba(251, 246, 234, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(251, 246, 234, 0.05) 1px, transparent 1px);
-  background-size: 48px 48px;
-}
-
-.route-grid {
-  background-image:
-    linear-gradient(rgba(251, 246, 234, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(251, 246, 234, 0.05) 1px, transparent 1px);
-  background-size: 56px 56px;
-}
-
 .display-hero {
   font-family: var(--font-display), Georgia, serif;
   font-size: clamp(3.15rem, 8.4vw, 7.15rem);
@@ -128,47 +114,47 @@ img {
 }
 
 .label {
-  font-family: var(--font-mono), ui-monospace, monospace;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   line-height: 1rem;
   text-transform: uppercase;
 }
 
 .label-wide {
-  font-family: var(--font-mono), ui-monospace, monospace;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 0.75rem;
-  font-weight: 900;
-  letter-spacing: 0.18em;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   line-height: 1rem;
   text-transform: uppercase;
 }
 
 .label-tight {
-  font-family: var(--font-mono), ui-monospace, monospace;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 0.75rem;
-  font-weight: 900;
-  letter-spacing: 0.14em;
+  font-weight: 700;
+  letter-spacing: 0.03em;
   line-height: 1rem;
   text-transform: uppercase;
 }
 
 .label-route {
-  font-family: var(--font-mono), ui-monospace, monospace;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 0.75rem;
-  font-weight: 900;
-  letter-spacing: 0.16em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   line-height: 1rem;
   text-transform: uppercase;
 }
 
 .label-hero {
-  font-family: var(--font-mono), ui-monospace, monospace;
-  font-size: 0.75rem;
-  font-weight: 900;
-  letter-spacing: 0.22em;
-  line-height: 1rem;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.1rem;
   text-transform: uppercase;
 }
 
@@ -177,28 +163,15 @@ img {
 }
 
 .premium-shadow {
-  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 30px 70px -34px rgba(27, 22, 17, 0.55);
 }
 
 .cta-shadow {
-  box-shadow: 0 18px 50px rgba(194, 136, 58, 0.16);
-}
-
-.hero-glow {
-  background:
-    radial-gradient(circle at 75% 22%, rgba(194, 136, 58, 0.12), transparent 28rem),
-    radial-gradient(circle at 15% 80%, rgba(31, 81, 58, 0.16), transparent 26rem);
+  box-shadow: 0 18px 40px -22px rgba(27, 22, 17, 0.45);
 }
 
 .route-backdrop {
   background: linear-gradient(135deg, #15120f 0%, #181c15 48%, #121511 100%);
-}
-
-.route-grid-overlay {
-  background-image:
-    linear-gradient(rgba(251, 246, 234, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(251, 246, 234, 0.08) 1px, transparent 1px);
-  background-size: 44px 44px;
 }
 
 .hero-frame {
@@ -207,11 +180,6 @@ img {
 
 .food-frame {
   height: 300px;
-}
-
-.route-orb {
-  height: 62vh;
-  width: 62vh;
 }
 
 .road-lane {
@@ -258,7 +226,7 @@ img {
   border-radius: 1rem;
   background: var(--panel);
   padding: 0.5rem;
-  box-shadow: 0 8px 24px rgba(64, 42, 20, 0.06);
+  box-shadow: 0 10px 26px -18px rgba(27, 22, 17, 0.3);
   scrollbar-width: none;
 }
 
@@ -267,14 +235,14 @@ img {
   border: 1px solid var(--border);
   border-radius: 1.5rem;
   background: var(--panel);
-  box-shadow: 0 22px 70px rgba(64, 42, 20, 0.08);
+  box-shadow: 0 22px 50px -30px rgba(27, 22, 17, 0.4);
 }
 
 .food-menu-section,
 .truck-menu-section {
   overflow: hidden;
   border-radius: 0.75rem;
-  box-shadow: 0 24px 70px rgba(35, 24, 12, 0.12);
+  box-shadow: 0 22px 50px -28px rgba(27, 22, 17, 0.45);
 }
 
 .food-menu-section {
@@ -339,7 +307,7 @@ img {
 .home-option-card {
   overflow: hidden;
   border-radius: 0.75rem;
-  box-shadow: 0 24px 70px rgba(35, 24, 12, 0.12);
+  box-shadow: 0 22px 50px -28px rgba(27, 22, 17, 0.45);
 }
 
 .premium-dish-row,
@@ -489,7 +457,7 @@ img {
   overflow: hidden;
   border-radius: 1rem;
   background: var(--panel);
-  box-shadow: 0 28px 90px rgba(35, 24, 12, 0.16);
+  box-shadow: 0 22px 50px -28px rgba(27, 22, 17, 0.45);
   border: 1px solid rgba(27, 22, 17, 0.1);
 }
 
@@ -522,8 +490,8 @@ img {
   background: rgba(251, 246, 234, 0.94);
   padding: 1.25rem;
   color: var(--ink);
-  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.18);
-  backdrop-filter: blur(16px);
+  box-shadow: 0 18px 40px -22px rgba(27, 22, 17, 0.5);
+  border: 1px solid var(--border);
 }
 
 .menu-card-media {

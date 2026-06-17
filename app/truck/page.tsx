@@ -107,7 +107,7 @@ export default function TruckHomePage() {
           <div>
             <p className="label-wide text-tamarind">Menu</p>
             <h2 className="display-section mt-4 font-display font-black">The staples people order most.</h2>
-            <MotionLink className="mt-8 inline-flex rounded-full bg-ink px-6 py-4 text-sm font-black text-white" href="/truck/menu">
+            <MotionLink className="mt-8 inline-flex rounded-lg bg-ink px-6 py-4 text-sm font-black text-white" href="/truck/menu">
               View truck menu
             </MotionLink>
           </div>
@@ -152,10 +152,10 @@ export default function TruckHomePage() {
             <h2 className="mt-3 font-display text-5xl font-black leading-none">Vegetarian trays for groups.</h2>
           </div>
           <div className="flex flex-wrap gap-3">
-            <MotionAnchor className="rounded-full bg-saffron px-6 py-4 text-sm font-black text-ink" href="tel:+16696498039">
+            <MotionAnchor className="rounded-lg bg-saffron px-6 py-4 text-sm font-black text-ink" href="tel:+16696498039">
               Call catering
             </MotionAnchor>
-            <MotionAnchor className="rounded-full border border-white/22 px-6 py-4 text-sm font-black" href={links.order} target="_blank" rel="noreferrer">
+            <MotionAnchor className="rounded-lg border border-white/22 px-6 py-4 text-sm font-black" href={links.order} target="_blank" rel="noreferrer">
               Order online
             </MotionAnchor>
           </div>
