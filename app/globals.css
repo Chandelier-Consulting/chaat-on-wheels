@@ -60,10 +60,20 @@ img {
   max-width: 100%;
 }
 
+::selection {
+  background: rgba(246, 178, 26, 0.34);
+  color: var(--ink);
+}
+
 @layer base {
   a {
     color: inherit;
     text-decoration: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--saffron);
+    outline-offset: 4px;
   }
 }
 

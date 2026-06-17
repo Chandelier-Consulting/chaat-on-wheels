@@ -5,6 +5,7 @@ import {
   ImageFrame,
   LocationCards,
   MobileActionBar,
+  ProofStrip,
   SiteFooter,
   SiteHeader,
   SideRail,
@@ -43,6 +44,8 @@ export default function FoodHomePage() {
           </MotionItem>
         </MotionGroup>
       </section>
+
+      <ProofStrip />
 
       <section className="bg-white py-20">
         <div className="section-shell grid gap-5 md:grid-cols-3">

@@ -22,9 +22,13 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Chaat On Wheels | Premium Indian Street Food in Sunnyvale",
+  title: "Chaat On Wheels | Indian Street Food in Sunnyvale",
   description:
-    "Vegetarian Indian street food, chaat, vada pav, pav bhaji, kulche chole, lassi, and chai from Chaat On Wheels in Sunnyvale and San Jose.",
+    "Vegetarian chaat, vada pav, chai, lassi, pickup, catering, and South Bay truck stops from Chaat On Wheels.",
+  openGraph: {
+    title: "Chaat On Wheels",
+    description: "Vegetarian Indian street food for pickup, catering, and South Bay truck stops.",
+  },
 };
 
 export default function RootLayout({

@@ -256,6 +256,33 @@ export function SideRail({ label, tone = "dark" }: { label: string; tone?: Tone 
   );
 }
 
+export function ProofStrip({ tone = "light" }: { tone?: Tone }) {
+  const isDark = tone === "dark";
+  const items = [
+    ["Vegetarian", "Chaat, pav, drinks, and sweets."],
+    ["Sunnyvale", "Daily pickup window on Lawrence Expressway."],
+    ["Order ahead", "Online pickup and direct phone links."],
+    ["Catering", "Trays for offices, parties, and family meals."],
+  ];
+
+  return (
+    <section className={`${isDark ? "bg-night text-white" : "bg-white text-ink"} py-12`}>
+      <div className="section-shell grid gap-4 md:grid-cols-4">
+        {items.map(([title, body]) => (
+          <RevealItem key={title}>
+            <article className={`h-full border-t pt-4 ${isDark ? "border-white/14" : "border-ink/12"}`}>
+              <p className={isDark ? "label-wide text-saffron" : "label-wide text-tamarind"}>{title}</p>
+              <p className={`mt-3 text-sm font-semibold leading-6 ${isDark ? "text-white/64" : "text-muted"}`}>
+                {body}
+              </p>
+            </article>
+          </RevealItem>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export function ImageFrame({
   src,
   alt,

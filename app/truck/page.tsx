@@ -7,6 +7,7 @@ import {
   GoogleMapFrame,
   LocationCards,
   MobileActionBar,
+  ProofStrip,
   SiteFooter,
   SiteHeader,
   SideRail,
@@ -62,6 +63,8 @@ export default function TruckHomePage() {
           </motion.div>
         </div>
       </section>
+
+      <ProofStrip />
 
       <section className="relative overflow-hidden bg-night py-24 text-white">
         <SideRail label="Stops / 01-04" />
