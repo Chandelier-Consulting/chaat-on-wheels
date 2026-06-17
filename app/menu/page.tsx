@@ -57,60 +57,102 @@ function slug(value: string) {
 
 export default function MenuPage() {
   return (
-    <main className="min-h-screen bg-[#fffaf0] text-[#14110f]">
-      <header className="border-b border-black/10 bg-[#11100f] text-white">
-        <nav className="mx-auto flex min-h-16 w-[min(1180px,calc(100%-32px))] items-center justify-between gap-5">
+    <main className="min-h-screen bg-cream text-ink">
+      <header className="border-b border-white/10 bg-night text-white">
+        <nav className="section-shell flex min-h-16 items-center justify-between gap-5">
           <Link href="/" className="flex items-center gap-3">
-            <span className="grid h-10 w-10 place-items-center rounded-full bg-[#ffb000] text-sm font-black text-[#14110f]">CW</span>
-            <span className="font-black">Chaat On Wheels</span>
+            <span className="grid h-10 w-10 place-items-center rounded-full bg-saffron text-sm font-black text-ink">
+              CW
+            </span>
+            <span className="font-display text-xl">Chaat On Wheels</span>
           </Link>
           <div className="flex items-center gap-3">
-            <Link href="/" className="hidden rounded-full border border-white/18 px-5 py-3 text-sm font-black text-white sm:inline-flex">
+            <Link
+              href="/"
+              className="hidden rounded-full border border-white/20 px-5 py-3 text-sm font-black text-white transition hover:border-saffron hover:text-saffron sm:inline-flex"
+            >
               Day route
             </Link>
-            <a href={orderLink} target="_blank" rel="noreferrer" className="rounded-full bg-[#ffb000] px-5 py-3 text-sm font-black text-[#14110f]">
+            <a
+              href={orderLink}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full bg-saffron px-5 py-3 text-sm font-black text-ink transition hover:bg-paper"
+            >
               Order
             </a>
           </div>
         </nav>
       </header>
 
-      <section className="bg-[#11100f] px-4 pb-14 pt-16 text-white sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+      <section className="hero-grid bg-night py-16 text-white">
+        <div className="section-shell menu-hero-grid">
           <div>
-            <p className="text-xs font-black uppercase tracking-[0.22em] text-[#ffb000]">Full menu</p>
-            <h1 className="mt-5 max-w-3xl text-5xl font-black leading-[0.92] tracking-normal sm:text-7xl">
-              Chaat, pav, lassi, chai.
+            <h1 className="font-display text-balance max-w-3xl text-6xl leading-none text-white sm:text-7xl">
+              Full menu
             </h1>
-            <p className="mt-5 max-w-2xl text-lg font-semibold leading-8 text-white/68">
-              A practical menu page, separated from the animated daily route so ordering stays fast.
+            <p className="mt-5 max-w-3xl text-3xl font-black leading-tight text-saffron sm:text-5xl">
+              Chaat, pav, lassi, chai.
             </p>
+            <p className="mt-5 max-w-2xl text-lg font-semibold leading-8 text-white/70">
+              Browse the core Chaat On Wheels menu before you order pickup, call ahead, or
+              head to the truck.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href={orderLink}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full bg-saffron px-5 py-3 text-sm font-black text-ink transition hover:bg-paper"
+              >
+                Order pickup
+              </a>
+              <a
+                href={sunnyvaleMaps}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full border border-white/20 px-5 py-3 text-sm font-black text-white transition hover:border-saffron hover:text-saffron"
+              >
+                Get directions
+              </a>
+            </div>
           </div>
-          <div className="overflow-hidden rounded-[2rem] border border-white/12 bg-[#fffaf0] p-3 shadow-[0_34px_90px_rgba(0,0,0,.36)]">
-            <Image src="/samosa-chaat.jpg" alt="Samosa chaat" width={900} height={675} priority className="h-72 w-full rounded-[1.35rem] object-cover" />
+          <div className="overflow-hidden rounded-3xl border border-white/10 bg-paper p-3 shadow-2xl">
+            <Image
+              src="/samosa-chaat.jpg"
+              alt="Samosa chaat"
+              width={900}
+              height={675}
+              priority
+              quality={92}
+              className="photo-grade h-72 w-full rounded-2xl object-cover"
+            />
           </div>
         </div>
       </section>
 
-      <section className="px-4 py-12 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[240px_minmax(0,1fr)]">
+      <section className="py-16">
+        <div className="section-shell menu-content-grid">
           <aside className="lg:sticky lg:top-6 lg:self-start">
-            <nav aria-label="Menu categories" className="flex gap-2 overflow-x-auto rounded-2xl border border-black/10 bg-white p-2 shadow-sm [scrollbar-width:none] lg:flex-col">
+            <nav aria-label="Menu categories" className="menu-category-nav">
               {categories.map((category) => (
                 <a
                   key={category.name}
                   href={`#${slug(category.name)}`}
-                  className="shrink-0 rounded-xl px-4 py-3 text-sm font-black text-[#685f58] transition hover:bg-[#fff4d2] hover:text-[#14110f]"
+                  className="shrink-0 rounded-xl px-4 py-3 text-sm font-black text-muted transition hover:bg-paper hover:text-ink"
                 >
                   {category.name}
                 </a>
               ))}
             </nav>
-            <div className="mt-5 rounded-2xl border border-black/10 bg-[#11100f] p-5 text-sm font-semibold leading-6 text-white/64">
-              <p className="font-black text-[#ffb000]">Sunnyvale</p>
+            <div className="mt-5 rounded-2xl border border-white/10 bg-night p-5 text-sm font-semibold leading-6 text-white/70">
+              <p className="label text-saffron">Sunnyvale</p>
               <p className="mt-2">1101 Lawrence Expressway</p>
               <p>Every day, 11:30 AM-8:40 PM</p>
-              <a className="mt-4 inline-flex rounded-full bg-[#ffb000] px-4 py-3 font-black text-[#14110f]" href="tel:+16696498039">
+              <a
+                className="mt-4 inline-flex rounded-full bg-saffron px-4 py-3 font-black text-ink transition hover:bg-paper"
+                href="tel:+16696498039"
+              >
                 (669) 649-8039
               </a>
             </div>
@@ -121,28 +163,35 @@ export default function MenuPage() {
               <section
                 key={category.name}
                 id={slug(category.name)}
-                className="scroll-mt-8 overflow-hidden rounded-3xl border border-black/10 bg-white shadow-[0_22px_70px_rgba(64,42,20,.08)]"
+                className="menu-card scroll-mt-8"
               >
-                <div className="grid border-b border-black/10 bg-[#fff7e3] md:grid-cols-[260px_1fr]">
-                  <Image src={category.image} alt={category.name} width={900} height={675} className="h-56 w-full object-cover md:h-full" />
+                <div className="menu-card-media">
+                  <Image
+                    src={category.image}
+                    alt={category.name}
+                    width={900}
+                    height={675}
+                    quality={85}
+                    className="photo-grade h-56 w-full object-cover md:h-full"
+                  />
                   <div className="p-6 sm:p-8">
-                    <p className="text-xs font-black uppercase tracking-[0.18em] text-[#7a1f13]">
+                    <p className="label text-tamarind">
                       {category.items.length} items
                     </p>
-                    <h2 className="mt-2 text-3xl font-black">{category.name}</h2>
-                    <p className="mt-3 max-w-xl text-sm font-semibold leading-6 text-[#685f58]">
+                    <h2 className="font-display text-balance mt-2 text-4xl">{category.name}</h2>
+                    <p className="mt-3 max-w-xl text-sm font-semibold leading-6 text-muted">
                       Current availability and prices can change. Call ahead for today&apos;s specials or larger orders.
                     </p>
                   </div>
                 </div>
-                <div className="divide-y divide-black/10 px-5 py-2 sm:px-8">
+                <div className="divide-y divide-border px-5 py-2 sm:px-8">
                   {category.items.map(([name, price, description]) => (
-                    <article key={name} className="grid gap-2 py-5 sm:grid-cols-[1fr_auto] sm:gap-6">
+                    <article key={name} className="menu-item-row py-5">
                       <div>
                         <h3 className="text-lg font-black">{name}</h3>
-                        <p className="mt-1 max-w-3xl text-sm font-semibold leading-6 text-[#685f58]">{description}</p>
+                        <p className="mt-1 max-w-3xl text-sm font-semibold leading-6 text-muted">{description}</p>
                       </div>
-                      <p className="text-base font-black text-[#7a1f13] sm:text-right">{price}</p>
+                      <p className="font-mono text-base font-bold text-tamarind sm:text-right">{price}</p>
                     </article>
                   ))}
                 </div>
@@ -152,17 +201,27 @@ export default function MenuPage() {
         </div>
       </section>
 
-      <section className="bg-[#126c43] px-4 py-14 text-white sm:px-6 lg:px-8">
-        <div className="mx-auto flex max-w-6xl flex-col justify-between gap-6 md:flex-row md:items-center">
+      <section className="bg-chutney py-16 text-white">
+        <div className="section-shell flex flex-col justify-between gap-6 md:flex-row md:items-center">
           <div>
-            <h2 className="text-3xl font-black">Ready to order?</h2>
+            <h2 className="font-display text-balance text-4xl">Ready to order?</h2>
             <p className="mt-2 text-sm font-semibold text-white/70">Order online, call Sunnyvale, or get directions.</p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <a className="rounded-full bg-[#ffb000] px-5 py-3 text-sm font-black text-[#14110f]" href={orderLink} target="_blank" rel="noreferrer">
+            <a
+              className="rounded-full bg-saffron px-5 py-3 text-sm font-black text-ink transition hover:bg-paper"
+              href={orderLink}
+              target="_blank"
+              rel="noreferrer"
+            >
               Order online
             </a>
-            <a className="rounded-full border border-white/22 px-5 py-3 text-sm font-black" href={sunnyvaleMaps} target="_blank" rel="noreferrer">
+            <a
+              className="rounded-full border border-white/20 px-5 py-3 text-sm font-black transition hover:border-saffron hover:text-saffron"
+              href={sunnyvaleMaps}
+              target="_blank"
+              rel="noreferrer"
+            >
               Directions
             </a>
           </div>
