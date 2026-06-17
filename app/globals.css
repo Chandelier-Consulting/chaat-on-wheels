@@ -170,6 +170,20 @@ img {
   box-shadow: 0 18px 40px -22px rgba(27, 22, 17, 0.45);
 }
 
+.hero-pattern {
+  background-image:
+    repeating-linear-gradient(45deg, rgba(251, 246, 234, 0.07) 0, rgba(251, 246, 234, 0.07) 1px, transparent 1px, transparent 28px),
+    repeating-linear-gradient(-45deg, rgba(251, 246, 234, 0.07) 0, rgba(251, 246, 234, 0.07) 1px, transparent 1px, transparent 28px);
+  mask-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.9) 18%, rgba(0, 0, 0, 0.9) 82%, transparent);
+}
+
+.hero-pattern-light {
+  background-image:
+    repeating-linear-gradient(45deg, rgba(27, 22, 17, 0.06) 0, rgba(27, 22, 17, 0.06) 1px, transparent 1px, transparent 28px),
+    repeating-linear-gradient(-45deg, rgba(27, 22, 17, 0.06) 0, rgba(27, 22, 17, 0.06) 1px, transparent 1px, transparent 28px);
+  mask-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.9) 18%, rgba(0, 0, 0, 0.9) 82%, transparent);
+}
+
 .route-backdrop {
   background: linear-gradient(135deg, #15120f 0%, #181c15 48%, #121511 100%);
 }
