@@ -67,7 +67,7 @@ export function CateringPlanner({ variant = "food" }: { variant?: Variant }) {
         className={`grid gap-8 rounded-lg border p-5 shadow-2xl shadow-black/20 sm:p-8 lg:grid-cols-[0.9fr_1.1fr] ${shell}`}
         initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
         whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.25 }}
+        viewport={{ once: false, amount: 0.25 }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
       >
         <div>

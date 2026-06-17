@@ -19,7 +19,7 @@ export function ReviewsCarousel({ tone = "light" }: { tone?: "light" | "dark" })
         <motion.div
           initial={shouldReduceMotion ? false : { opacity: 0, y: 22 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.24 }}
+          viewport={{ once: false, amount: 0.24 }}
           transition={{ duration: shouldReduceMotion ? 0 : 0.68, ease: EASE_OUT_EXPO }}
         >
           <p className={isDark ? "label-wide text-saffron" : "label-wide text-tamarind"}>Reviews</p>

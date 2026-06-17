@@ -44,7 +44,7 @@ export function MotionSection({
       variants={variant === "softScale" ? softScale : rise}
       initial={shouldReduceMotion ? false : "hidden"}
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: false, amount: 0.22 }}
       transition={{ duration: shouldReduceMotion ? 0 : 0.68, delay, ease: EASE_OUT_EXPO }}
       {...props}
     >
@@ -68,7 +68,7 @@ export function MotionGroup({
       variants={group}
       initial={shouldReduceMotion ? false : "hidden"}
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: false, amount: 0.22 }}
       {...props}
     >
       {children}
@@ -118,7 +118,7 @@ export function RevealItem({
       variants={variant === "softScale" ? softScale : rise}
       initial={shouldReduceMotion ? false : "hidden"}
       whileInView="visible"
-      viewport={{ once: true, amount }}
+      viewport={{ once: false, amount }}
       transition={{ duration: shouldReduceMotion ? 0 : 0.58, ease: EASE_OUT_EXPO }}
       {...props}
     >
