@@ -121,23 +121,23 @@ function MiniTruck() {
   return (
     <svg className="h-full w-full drop-shadow-2xl" viewBox="0 0 74 126" aria-hidden="true">
       <ellipse cx="37" cy="116" rx="22" ry="7" fill="rgba(0,0,0,.32)" />
-      <rect x="16" y="13" width="42" height="94" rx="13" fill="#f6b21a" stroke="#fffaf0" strokeWidth="3" />
-      <path d="M20 37h34v45H20z" fill="#fffaf0" />
-      <path d="M23 19h28l5 16H18z" fill="#0f6b45" />
+      <rect x="16" y="13" width="42" height="94" rx="13" fill="#c2883a" stroke="#fbf6ea" strokeWidth="3" />
+      <path d="M20 37h34v45H20z" fill="#fbf6ea" />
+      <path d="M23 19h28l5 16H18z" fill="#1f513a" />
       <path d="M25 23h24l2 8H22z" fill="#e7f6ff" opacity=".9" />
-      <rect x="23" y="44" width="28" height="18" rx="4" fill="#17120d" opacity=".88" />
-      <text x="37" y="57" textAnchor="middle" fontSize="10" fontWeight="900" fill="#f6b21a">
+      <rect x="23" y="44" width="28" height="18" rx="4" fill="#1b1611" opacity=".88" />
+      <text x="37" y="57" textAnchor="middle" fontSize="10" fontWeight="900" fill="#c2883a">
         CHAAT
       </text>
-      <rect x="24" y="68" width="26" height="9" rx="4.5" fill="#7c2518" />
-      <rect x="25" y="88" width="24" height="8" rx="4" fill="#0f6b45" />
-      <rect x="8" y="32" width="7" height="18" rx="3" fill="#17120d" />
-      <rect x="59" y="32" width="7" height="18" rx="3" fill="#17120d" />
-      <rect x="8" y="78" width="7" height="18" rx="3" fill="#17120d" />
-      <rect x="59" y="78" width="7" height="18" rx="3" fill="#17120d" />
-      <path d="M23 105h28" stroke="#fffaf0" strokeWidth="4" strokeLinecap="round" />
-      <circle cx="25" cy="9" r="3" fill="#fffaf0" opacity=".82" />
-      <circle cx="49" cy="9" r="3" fill="#fffaf0" opacity=".82" />
+      <rect x="24" y="68" width="26" height="9" rx="4.5" fill="#6f3220" />
+      <rect x="25" y="88" width="24" height="8" rx="4" fill="#1f513a" />
+      <rect x="8" y="32" width="7" height="18" rx="3" fill="#1b1611" />
+      <rect x="59" y="32" width="7" height="18" rx="3" fill="#1b1611" />
+      <rect x="8" y="78" width="7" height="18" rx="3" fill="#1b1611" />
+      <rect x="59" y="78" width="7" height="18" rx="3" fill="#1b1611" />
+      <path d="M23 105h28" stroke="#fbf6ea" strokeWidth="4" strokeLinecap="round" />
+      <circle cx="25" cy="9" r="3" fill="#fbf6ea" opacity=".82" />
+      <circle cx="49" cy="9" r="3" fill="#fbf6ea" opacity=".82" />
     </svg>
   );
 }

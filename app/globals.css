@@ -1,20 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fbf7ee;
-  --foreground: #17120d;
-  --ink: #17120d;
-  --muted: #74685d;
-  --paper: #fffaf0;
-  --panel: #ffffff;
-  --saffron: #f6b21a;
-  --chutney: #0f6b45;
-  --tamarind: #7c2518;
-  --rose: #d94a36;
-  --mint: #dcedd2;
-  --border: #e5dac8;
-  --night: #11100e;
-  --cream: #fbf7ee;
+  --background: #f6f1e4;
+  --foreground: #1b1611;
+  --ink: #1b1611;
+  --muted: #6b5f54;
+  --paper: #fbf6ea;
+  --panel: #fdfbf6;
+  --saffron: #c2883a;
+  --chutney: #1f513a;
+  --tamarind: #6f3220;
+  --rose: #a14736;
+  --mint: #d7ddca;
+  --border: #ddd1ba;
+  --night: #15120f;
+  --cream: #f6f1e4;
 }
 
 @theme inline {
@@ -61,7 +61,7 @@ img {
 }
 
 ::selection {
-  background: rgba(246, 178, 26, 0.34);
+  background: rgba(194, 136, 58, 0.34);
   color: var(--ink);
 }
 
@@ -101,15 +101,15 @@ img {
 
 .hero-grid {
   background-image:
-    linear-gradient(rgba(255, 250, 240, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 250, 240, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(251, 246, 234, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(251, 246, 234, 0.05) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 
 .route-grid {
   background-image:
-    linear-gradient(rgba(255, 250, 240, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 250, 240, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(251, 246, 234, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(251, 246, 234, 0.05) 1px, transparent 1px);
   background-size: 56px 56px;
 }
 
@@ -181,23 +181,23 @@ img {
 }
 
 .cta-shadow {
-  box-shadow: 0 18px 50px rgba(246, 178, 26, 0.22);
+  box-shadow: 0 18px 50px rgba(194, 136, 58, 0.16);
 }
 
 .hero-glow {
   background:
-    radial-gradient(circle at 75% 22%, rgba(246, 178, 26, 0.18), transparent 28rem),
-    radial-gradient(circle at 15% 80%, rgba(15, 107, 69, 0.22), transparent 26rem);
+    radial-gradient(circle at 75% 22%, rgba(194, 136, 58, 0.12), transparent 28rem),
+    radial-gradient(circle at 15% 80%, rgba(31, 81, 58, 0.16), transparent 26rem);
 }
 
 .route-backdrop {
-  background: linear-gradient(135deg, #11100e 0%, #151811 48%, #0f120f 100%);
+  background: linear-gradient(135deg, #15120f 0%, #181c15 48%, #121511 100%);
 }
 
 .route-grid-overlay {
   background-image:
-    linear-gradient(rgba(255, 250, 240, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 250, 240, 0.08) 1px, transparent 1px);
+    linear-gradient(rgba(251, 246, 234, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(251, 246, 234, 0.08) 1px, transparent 1px);
   background-size: 44px 44px;
 }
 
@@ -283,12 +283,12 @@ img {
 }
 
 .truck-menu-section {
-  border: 1px solid rgba(255, 250, 240, 0.12);
-  background: rgba(255, 250, 240, 0.06);
+  border: 1px solid rgba(251, 246, 234, 0.12);
+  background: rgba(251, 246, 234, 0.06);
 }
 
 .truck-menu-section .menu-card-media {
-  background: rgba(255, 250, 240, 0.08);
+  background: rgba(251, 246, 234, 0.08);
 }
 
 .side-rail {
@@ -345,18 +345,18 @@ img {
 .premium-dish-row,
 .journey-dish-card {
   display: grid;
-  background: #ffffff;
-  border: 1px solid rgba(23, 18, 13, 0.1);
+  background: #fdfbf6;
+  border: 1px solid rgba(27, 22, 17, 0.1);
 }
 
 .journey-stop-card {
-  background: rgba(255, 250, 240, 0.08);
-  border: 1px solid rgba(255, 250, 240, 0.12);
+  background: rgba(251, 246, 234, 0.08);
+  border: 1px solid rgba(251, 246, 234, 0.12);
 }
 
 .home-option-card {
   display: block;
-  background: rgba(255, 250, 240, 0.06);
+  background: rgba(251, 246, 234, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
   transition:
     transform 180ms ease,
@@ -366,8 +366,8 @@ img {
 
 .home-option-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(246, 178, 26, 0.45);
-  background: rgba(255, 250, 240, 0.1);
+  border-color: rgba(194, 136, 58, 0.45);
+  background: rgba(251, 246, 234, 0.1);
 }
 
 .journey-map {
@@ -376,9 +376,9 @@ img {
   overflow: hidden;
   border-radius: 1rem;
   background:
-    linear-gradient(90deg, rgba(255, 250, 240, 0.1), rgba(255, 250, 240, 0.4)),
-    linear-gradient(135deg, #0f6b45 0%, #0c5136 100%);
-  box-shadow: 0 28px 90px rgba(15, 81, 54, 0.28);
+    linear-gradient(90deg, rgba(251, 246, 234, 0.1), rgba(251, 246, 234, 0.32)),
+    linear-gradient(135deg, #1f513a 0%, #163d2b 100%);
+  box-shadow: 0 28px 90px rgba(31, 81, 58, 0.24);
 }
 
 .journey-hero .display-hero {
@@ -389,7 +389,7 @@ img {
   content: "";
   position: absolute;
   inset: 1.25rem;
-  border: 1px solid rgba(255, 250, 240, 0.16);
+  border: 1px solid rgba(251, 246, 234, 0.16);
   border-radius: 0.75rem;
 }
 
@@ -399,8 +399,8 @@ img {
   top: 4rem;
   height: 18rem;
   width: 15rem;
-  border-right: 8px dashed rgba(255, 250, 240, 0.56);
-  border-top: 8px dashed rgba(255, 250, 240, 0.56);
+  border-right: 8px dashed rgba(251, 246, 234, 0.56);
+  border-top: 8px dashed rgba(251, 246, 234, 0.56);
   border-radius: 0 12rem 0 0;
 }
 
@@ -408,7 +408,7 @@ img {
   position: absolute;
   height: 1.6rem;
   width: 1.6rem;
-  border: 5px solid #fffaf0;
+  border: 5px solid #fbf6ea;
   border-radius: 999px;
   background: var(--rose);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
@@ -435,7 +435,7 @@ img {
 .truck-body {
   position: relative;
   height: 9.5rem;
-  border: 8px solid #fffaf0;
+  border: 8px solid #fbf6ea;
   border-radius: 1.1rem 1.1rem 0.75rem 0.75rem;
   background: var(--saffron);
   box-shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
@@ -448,7 +448,7 @@ img {
   bottom: -1.35rem;
   height: 2rem;
   width: 2rem;
-  border: 6px solid #fffaf0;
+  border: 6px solid #fbf6ea;
   border-radius: 999px;
   background: var(--ink);
 }
@@ -465,7 +465,7 @@ img {
   position: absolute;
   left: 2rem;
   top: 4.8rem;
-  color: #fffaf0;
+  color: #fbf6ea;
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 1.7rem;
   font-weight: 900;
@@ -480,7 +480,7 @@ img {
   height: 2.6rem;
   border-radius: 0.5rem;
   background: var(--night);
-  box-shadow: inset 5rem 0 0 rgba(255, 250, 240, 0.9);
+  box-shadow: inset 5rem 0 0 rgba(251, 246, 234, 0.9);
 }
 
 .google-map-frame {
@@ -490,7 +490,7 @@ img {
   border-radius: 1rem;
   background: var(--panel);
   box-shadow: 0 28px 90px rgba(35, 24, 12, 0.16);
-  border: 1px solid rgba(23, 18, 13, 0.1);
+  border: 1px solid rgba(27, 22, 17, 0.1);
 }
 
 .google-map-frame iframe {
@@ -509,7 +509,7 @@ img {
   pointer-events: none;
   background:
     linear-gradient(180deg, rgba(251, 247, 238, 0.12), transparent 38%),
-    linear-gradient(0deg, rgba(17, 16, 14, 0.2), transparent 46%);
+    linear-gradient(0deg, rgba(21, 18, 15, 0.2), transparent 46%);
 }
 
 .google-map-card {
@@ -519,7 +519,7 @@ img {
   z-index: 2;
   width: min(21rem, calc(100% - 2rem));
   border-radius: 0.75rem;
-  background: rgba(255, 250, 240, 0.94);
+  background: rgba(251, 246, 234, 0.94);
   padding: 1.25rem;
   color: var(--ink);
   box-shadow: 0 18px 60px rgba(0, 0, 0, 0.18);

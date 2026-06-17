@@ -26,7 +26,7 @@ export default function FoodHomePage() {
       <section className="relative grid min-h-screen items-center overflow-hidden bg-night px-4 pb-28 pt-28 text-white sm:px-6 lg:px-8">
         <SideRail label="Food / Fresh" />
         <Image src="/hero-chaat.jpg" alt="Chaat spread" fill priority quality={92} sizes="100vw" className="object-cover opacity-50" />
-        <div className="absolute inset-0 bg-[linear-gradient(105deg,#11100e_0%,rgba(17,16,14,.96)_38%,rgba(17,16,14,.32)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(105deg,#15120f_0%,rgba(21,18,15,.96)_38%,rgba(21,18,15,.32)_100%)]" />
         <MotionGroup className="section-shell relative z-10">
           <MotionItem>
             <p className="label-hero text-saffron">Sunnyvale Indian street food</p>
