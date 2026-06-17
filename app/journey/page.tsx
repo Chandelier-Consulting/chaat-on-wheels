@@ -6,8 +6,10 @@ import { motion, useReducedMotion } from "framer-motion";
 import {
   ActionLinks,
   BrandHeader,
+  GoogleMapFrame,
   LocationCards,
   MobileActionBar,
+  PreviewSwitcher,
   SideRail,
   TruckIllustration,
 } from "../components/home/HomeShell";
@@ -20,7 +22,8 @@ export default function JourneyHomePage() {
 
   return (
     <main className="bg-cream text-ink">
-      <BrandHeader tone="light" />
+      <BrandHeader tone="light" activeVariant="truck" />
+      <PreviewSwitcher active="truck" tone="light" />
 
       <section className="journey-hero relative grid min-h-screen items-center overflow-hidden bg-cream px-4 pb-24 pt-28 sm:px-6 lg:px-8">
         <SideRail label="Truck / Today" tone="light" />
@@ -113,23 +116,26 @@ export default function JourneyHomePage() {
       </section>
 
       <section className="bg-cream py-24">
-        <div className="section-shell journey-dish-grid">
+        <div className="section-shell truck-map-grid">
           <div>
             <p className="label-wide text-tamarind">Find us</p>
             <h2 className="display-section mt-4 font-display font-black">Get there fast. Eat even faster.</h2>
             <p className="mt-6 max-w-xl text-lg font-semibold leading-8 text-muted">
-              Sunnyvale and San Jose are one tap away, with call, directions, and online ordering kept up front.
+              Start with the live Google map, then call, order, or open directions when you are ready to roll.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link className="rounded-full bg-ink px-6 py-4 text-sm font-black text-white" href="/premium">
-                See signature dishes
+                View food-first page
               </Link>
               <a className="rounded-full bg-chutney px-6 py-4 text-sm font-black text-white" href={links.order} target="_blank" rel="noreferrer">
                 Order now
               </a>
             </div>
+            <div className="mt-6">
+              <LocationCards />
+            </div>
           </div>
-          <LocationCards />
+          <GoogleMapFrame />
         </div>
       </section>
 
@@ -144,7 +150,7 @@ export default function JourneyHomePage() {
               Call catering
             </a>
             <Link className="rounded-full border border-white/22 px-6 py-4 text-sm font-black" href="/">
-              Explore more
+              Choose a homepage
             </Link>
           </div>
         </div>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { links, locations } from "./content";
 
 type Tone = "dark" | "light";
+type HomeVariant = "food" | "truck";
 
 function ArrowIcon() {
   return (
@@ -27,8 +28,10 @@ export function BrandMark() {
   );
 }
 
-export function BrandHeader({ tone = "dark" }: { tone?: Tone }) {
+export function BrandHeader({ tone = "dark", activeVariant }: { tone?: Tone; activeVariant?: HomeVariant }) {
   const isDark = tone === "dark";
+  const navLinkClass = (variant: HomeVariant) =>
+    `transition hover:text-saffron ${activeVariant === variant ? "text-saffron" : ""}`;
 
   return (
     <header
@@ -42,11 +45,11 @@ export function BrandHeader({ tone = "dark" }: { tone?: Tone }) {
           <span className="font-display text-lg font-black">Chaat On Wheels</span>
         </Link>
         <div className={`hidden items-center gap-7 label-tight md:flex ${isDark ? "text-white/62" : "text-ink/62"}`}>
-          <Link className="transition hover:text-saffron" href="/premium">
-            Food
+          <Link className={navLinkClass("food")} href="/premium" aria-current={activeVariant === "food" ? "page" : undefined}>
+            Food-first page
           </Link>
-          <Link className="transition hover:text-saffron" href="/journey">
-            Truck
+          <Link className={navLinkClass("truck")} href="/journey" aria-current={activeVariant === "truck" ? "page" : undefined}>
+            Truck + map page
           </Link>
           <Link className="transition hover:text-saffron" href="/menu">
             Menu
@@ -62,6 +65,39 @@ export function BrandHeader({ tone = "dark" }: { tone?: Tone }) {
         </a>
       </nav>
     </header>
+  );
+}
+
+export function PreviewSwitcher({ active, tone = "light" }: { active: HomeVariant; tone?: Tone }) {
+  const isDark = tone === "dark";
+  const base = isDark
+    ? "border-white/12 bg-night/78 text-white shadow-2xl"
+    : "border-ink/10 bg-cream/88 text-ink shadow-xl";
+  const inactive = isDark
+    ? "text-white/62 hover:bg-white/10 hover:text-white"
+    : "text-ink/62 hover:bg-ink/5 hover:text-ink";
+
+  return (
+    <div
+      className={`fixed left-1/2 top-16 z-40 flex w-[calc(100%-1.5rem)] max-w-xl -translate-x-1/2 items-center justify-center gap-1 rounded-full border p-1 backdrop-blur-xl md:top-20 md:w-auto ${base}`}
+    >
+      <Link
+        href="/premium"
+        className={`rounded-full px-4 py-2 text-xs font-black uppercase tracking-[0.14em] transition ${
+          active === "food" ? "bg-saffron text-ink" : inactive
+        }`}
+      >
+        Food page
+      </Link>
+      <Link
+        href="/journey"
+        className={`rounded-full px-4 py-2 text-xs font-black uppercase tracking-[0.14em] transition ${
+          active === "truck" ? "bg-saffron text-ink" : inactive
+        }`}
+      >
+        Truck + map
+      </Link>
+    </div>
   );
 }
 
@@ -178,6 +214,35 @@ export function LocationCards({ tone = "light" }: { tone?: Tone }) {
         </section>
       ))}
     </div>
+  );
+}
+
+export function GoogleMapFrame() {
+  return (
+    <section className="google-map-frame">
+      <iframe
+        title="Google Map for Chaat On Wheels in Sunnyvale"
+        src="https://www.google.com/maps?q=Chaat%20On%20Wheels%201101%20Lawrence%20Expressway%20Sunnyvale%20CA%2094089&output=embed"
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        allowFullScreen
+      />
+      <div className="google-map-card">
+        <p className="label-tight text-tamarind">Main stop</p>
+        <h3 className="mt-2 font-display text-3xl font-black">Sunnyvale</h3>
+        <p className="mt-2 text-sm font-semibold leading-6 text-muted">
+          1101 Lawrence Expressway, Sunnyvale, CA 94089
+        </p>
+        <a
+          className="mt-4 inline-flex rounded-full bg-saffron px-5 py-3 text-sm font-black text-ink"
+          href={links.sunnyvaleMaps}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Open in Google Maps
+        </a>
+      </div>
+    </section>
   );
 }
 

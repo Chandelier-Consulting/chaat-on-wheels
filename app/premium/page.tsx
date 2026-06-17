@@ -7,6 +7,7 @@ import {
   ImageFrame,
   LocationCards,
   MobileActionBar,
+  PreviewSwitcher,
   SideRail,
 } from "../components/home/HomeShell";
 import { dishes, links } from "../components/home/content";
@@ -19,7 +20,8 @@ export const metadata: Metadata = {
 export default function PremiumHomePage() {
   return (
     <main className="bg-cream text-ink">
-      <BrandHeader tone="dark" />
+      <BrandHeader tone="dark" activeVariant="food" />
+      <PreviewSwitcher active="food" tone="dark" />
 
       <section className="premium-hero relative grid min-h-screen items-center overflow-hidden bg-night px-4 pb-28 pt-28 text-white sm:px-6 lg:px-8">
         <SideRail label="Order / Chaat" />
@@ -131,10 +133,10 @@ export default function PremiumHomePage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link className="rounded-full bg-ink px-6 py-4 text-sm font-black text-white" href="/journey">
-                Find the truck
+                View truck + map page
               </Link>
               <Link className="rounded-full border border-ink/14 px-6 py-4 text-sm font-black" href="/">
-                More options
+                Choose a homepage
               </Link>
             </div>
           </div>
