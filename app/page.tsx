@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BrandMark } from "./components/home/HomeShell";
+import { BrandMark, SiteFooter } from "./components/home/HomeShell";
 
 const options = [
   {
-    href: "/premium",
+    href: "/food",
     label: "Homepage option 1",
     title: "Food-first homepage",
     body: "A premium food-led page for crisp puri, warm pav, bright chutneys, chai, lassi, and fast pickup.",
@@ -12,7 +12,7 @@ const options = [
     accent: "text-saffron",
   },
   {
-    href: "/journey",
+    href: "/truck",
     label: "Homepage option 2",
     title: "Truck + map homepage",
     body: "A route-led page with a truck visual, embedded Google map, directions, ordering, and catering actions.",
@@ -74,6 +74,7 @@ export default function Home() {
           ))}
         </div>
       </section>
+      <SiteFooter site="food" tone="dark" />
     </main>
   );
 }

@@ -1,13 +1,28 @@
 export const links = {
   order: "https://postmates.com/store/chaat-on-wheels/9A13qNV2W5-yHyir6Yy4jw",
-  menu: "/menu",
-  premium: "/premium",
-  journey: "/journey",
+  menu: "/food/menu",
+  food: "/food",
+  truck: "/truck",
   yelp: "https://www.yelp.com/biz/chaat-on-wheels-sunnyvale",
   sunnyvaleMaps:
     "https://www.google.com/maps/search/?api=1&query=1101+Lawrence+Expressway+Sunnyvale+CA+94089",
   sanJoseMaps:
     "https://www.google.com/maps/search/?api=1&query=315+Crescent+Village+Cir+San+Jose+CA+95134",
+};
+
+export const siteNav = {
+  food: [
+    ["Home", "/food"],
+    ["Menu", "/food/menu"],
+    ["Catering", "/food/catering"],
+    ["Locations", "/food/locations"],
+  ],
+  truck: [
+    ["Home", "/truck"],
+    ["Menu", "/truck/menu"],
+    ["Catering", "/truck/catering"],
+    ["Locations", "/truck/locations"],
+  ],
 };
 
 export const locations = [
@@ -45,6 +60,52 @@ export const dishes = [
     note: "Warm samosa, chickpeas, yogurt, tamarind, crunch.",
     image: "/samosa-chaat.jpg",
   },
+];
+
+export const menuCategories = [
+  {
+    name: "Chaat",
+    image: "/dahi-puri.jpg",
+    items: [
+      ["Dahi Batata Sev Puri", "$13.79", "Crisp puri with potato, yogurt, chutneys, and sev."],
+      ["Dahi Papdi Chaat", "$11.99", "Papdi, yogurt, chutneys, sev, and spices."],
+      ["Samosa Chaat", "$11.29", "Samosa with chickpeas, yogurt, chutneys, and crunch."],
+      ["Aloo Tikki Chaat", "$11.29", "Potato patties with tangy chaat toppings."],
+      ["Bhel Puri", "$11.29", "Puffed rice, chutneys, onion, herbs, and sev."],
+      ["Pani Puri", "Market", "Crisp puri shells with spiced water and spiced filling."],
+    ],
+  },
+  {
+    name: "Pav & Plates",
+    image: "/vada-pav.jpg",
+    items: [
+      ["Vada Pav", "$7.79", "Mumbai-style potato fritter slider with chutney."],
+      ["Pav Bhaji", "Market", "Buttery pav with mashed vegetable bhaji."],
+      ["Dabeli", "$8.79", "Sweet-spicy street snack with potato filling."],
+      ["Cheese Dabeli", "$10.79", "Dabeli with a richer cheese finish."],
+      ["Kulche Chole", "$12.79", "Soft kulcha with North Indian-style chole."],
+      ["Vegetarian Sandwich", "$11.29", "Indian-style vegetarian sandwich."],
+      ["Paneer Sandwich", "$12.29", "Paneer sandwich with Indian street-food seasoning."],
+    ],
+  },
+  {
+    name: "Drinks & Sweets",
+    image: "/catering-chaat.jpg",
+    items: [
+      ["Mango Lassi", "$6.29", "Creamy mango yogurt drink."],
+      ["Masala Chai", "$4.99", "Spiced tea for the snack window."],
+      ["Rose Milk", "$6.29", "Cold rose-flavored milk."],
+      ["Sweet Lassi", "$4.99", "Sweet yogurt drink."],
+      ["Salted Lassi", "$4.99", "Savory salted yogurt drink."],
+      ["Gulab Jamun", "$6.49", "Two-piece syrup-soaked dessert."],
+    ],
+  },
+];
+
+export const cateringMoments = [
+  ["Office Lunch", "Fast vegetarian trays for teams, meetings, and release days."],
+  ["Family Party", "Chaat, pav, lassi, and sweets scaled for a full table."],
+  ["Event Pickup", "Call ahead for timing, tray planning, and pickup details."],
 ];
 
 export const journeyStops = [

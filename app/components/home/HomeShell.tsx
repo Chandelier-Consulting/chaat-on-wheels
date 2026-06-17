@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { links, locations } from "./content";
+import { links, locations, menuCategories, siteNav } from "./content";
 
 type Tone = "dark" | "light";
-type HomeVariant = "food" | "truck";
+type SiteId = "food" | "truck";
 
 function ArrowIcon() {
   return (
@@ -28,9 +28,9 @@ export function BrandMark() {
   );
 }
 
-export function BrandHeader({ tone = "dark", activeVariant }: { tone?: Tone; activeVariant?: HomeVariant }) {
+export function BrandHeader({ tone = "dark", activeVariant }: { tone?: Tone; activeVariant?: SiteId }) {
   const isDark = tone === "dark";
-  const navLinkClass = (variant: HomeVariant) =>
+  const navLinkClass = (variant: SiteId) =>
     `transition hover:text-saffron ${activeVariant === variant ? "text-saffron" : ""}`;
 
   return (
@@ -68,7 +68,70 @@ export function BrandHeader({ tone = "dark", activeVariant }: { tone?: Tone; act
   );
 }
 
-export function PreviewSwitcher({ active, tone = "light" }: { active: HomeVariant; tone?: Tone }) {
+export function SiteHeader({
+  site,
+  active,
+  tone = "light",
+}: {
+  site: SiteId;
+  active: "home" | "menu" | "catering" | "locations";
+  tone?: Tone;
+}) {
+  const isDark = tone === "dark";
+  const otherSite = site === "food" ? "truck" : "food";
+  const otherHref = site === "food" ? "/truck" : "/food";
+  const nav = siteNav[site];
+
+  return (
+    <header
+      className={`fixed left-0 right-0 top-0 z-50 border-b backdrop-blur-xl ${
+        isDark ? "border-white/10 bg-night/86 text-white" : "border-ink/10 bg-cream/90 text-ink"
+      }`}
+    >
+      <nav className="section-shell flex min-h-16 items-center justify-between gap-5">
+        <Link href={`/${site}`} className="flex items-center gap-3" aria-label="Chaat On Wheels home">
+          <BrandMark />
+          <span className="font-display text-lg font-black">Chaat On Wheels</span>
+        </Link>
+        <div className={`hidden items-center gap-7 label-tight lg:flex ${isDark ? "text-white/62" : "text-ink/62"}`}>
+          {nav.map(([label, href]) => {
+            const key = label.toLowerCase() as typeof active;
+            return (
+              <Link
+                key={href}
+                className={`transition hover:text-saffron ${active === key ? "text-saffron" : ""}`}
+                href={href}
+                aria-current={active === key ? "page" : undefined}
+              >
+                {label}
+              </Link>
+            );
+          })}
+        </div>
+        <div className="flex items-center gap-2">
+          <Link
+            href={otherHref}
+            className={`hidden rounded-full border px-4 py-3 text-xs font-black uppercase tracking-[0.12em] transition sm:inline-flex ${
+              isDark ? "border-white/16 text-white/70 hover:text-white" : "border-ink/12 text-ink/62 hover:text-ink"
+            }`}
+          >
+            {otherSite === "truck" ? "Truck site" : "Food site"}
+          </Link>
+          <a
+            href={links.order}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-saffron px-5 text-sm font-black text-ink transition hover:-translate-y-0.5 hover:brightness-105"
+          >
+            Order now <ArrowIcon />
+          </a>
+        </div>
+      </nav>
+    </header>
+  );
+}
+
+export function PreviewSwitcher({ active, tone = "light" }: { active: SiteId; tone?: Tone }) {
   const isDark = tone === "dark";
   const base = isDark
     ? "border-white/12 bg-night/78 text-white shadow-2xl"
@@ -82,26 +145,34 @@ export function PreviewSwitcher({ active, tone = "light" }: { active: HomeVarian
       className={`fixed left-1/2 top-16 z-40 flex w-[calc(100%-1.5rem)] max-w-xl -translate-x-1/2 items-center justify-center gap-1 rounded-full border p-1 backdrop-blur-xl md:top-20 md:w-auto ${base}`}
     >
       <Link
-        href="/premium"
+        href="/food"
         className={`rounded-full px-4 py-2 text-xs font-black uppercase tracking-[0.14em] transition ${
           active === "food" ? "bg-saffron text-ink" : inactive
         }`}
       >
-        Food page
+        Food site
       </Link>
       <Link
-        href="/journey"
+        href="/truck"
         className={`rounded-full px-4 py-2 text-xs font-black uppercase tracking-[0.14em] transition ${
           active === "truck" ? "bg-saffron text-ink" : inactive
         }`}
       >
-        Truck + map
+        Truck site
       </Link>
     </div>
   );
 }
 
-export function ActionLinks({ tone = "dark", menuLabel = "View menu" }: { tone?: Tone; menuLabel?: string }) {
+export function ActionLinks({
+  tone = "dark",
+  menuLabel = "View menu",
+  menuHref = links.menu,
+}: {
+  tone?: Tone;
+  menuLabel?: string;
+  menuHref?: string;
+}) {
   const secondaryClass =
     tone === "dark"
       ? "border-white/24 text-white hover:bg-white/10"
@@ -118,7 +189,7 @@ export function ActionLinks({ tone = "dark", menuLabel = "View menu" }: { tone?:
         Order pickup <ArrowIcon />
       </a>
       <Link
-        href="/menu"
+        href={menuHref}
         className={`inline-flex min-h-12 items-center justify-center rounded-full border px-6 text-sm font-black transition ${secondaryClass}`}
       >
         {menuLabel}
@@ -132,6 +203,43 @@ export function ActionLinks({ tone = "dark", menuLabel = "View menu" }: { tone?:
         Directions
       </a>
     </div>
+  );
+}
+
+export function SiteFooter({ site, tone = "light" }: { site: SiteId; tone?: Tone }) {
+  const isDark = tone === "dark";
+  const nav = siteNav[site];
+
+  return (
+    <footer className={`${isDark ? "bg-night text-white" : "bg-white text-ink"} px-4 py-12 sm:px-6 lg:px-8`}>
+      <div className="mx-auto grid max-w-6xl gap-8 border-t border-current/10 pt-8 md:grid-cols-[1.1fr_1fr_1fr]">
+        <div>
+          <div className="flex items-center gap-3">
+            <BrandMark />
+            <p className="font-display text-2xl font-black">Chaat On Wheels</p>
+          </div>
+          <p className={`mt-4 max-w-sm text-sm font-semibold leading-6 ${isDark ? "text-white/62" : "text-muted"}`}>
+            Vegetarian Indian street food for pickup, parties, and South Bay cravings.
+          </p>
+        </div>
+        <nav className="grid gap-3 text-sm font-black" aria-label={`${site} footer navigation`}>
+          {nav.map(([label, href]) => (
+            <Link key={href} className="transition hover:text-saffron" href={href}>
+              {label}
+            </Link>
+          ))}
+        </nav>
+        <div className="grid gap-3 text-sm font-semibold">
+          <a className="font-black text-saffron" href={links.order} target="_blank" rel="noreferrer">
+            Order online
+          </a>
+          <a href="tel:+16696498039">(669) 649-8039</a>
+          <a href={links.sunnyvaleMaps} target="_blank" rel="noreferrer">
+            1101 Lawrence Expressway, Sunnyvale
+          </a>
+        </div>
+      </div>
+    </footer>
   );
 }
 
@@ -210,6 +318,48 @@ export function LocationCards({ tone = "light" }: { tone?: Tone }) {
             >
               Directions
             </a>
+          </div>
+        </section>
+      ))}
+    </div>
+  );
+}
+
+export function MenuShowcase({ mode = "food" }: { mode?: SiteId }) {
+  const isTruck = mode === "truck";
+  return (
+    <div className="grid gap-6">
+      {menuCategories.map((category) => (
+        <section key={category.name} className={isTruck ? "truck-menu-section" : "food-menu-section"}>
+          <div className="menu-card-media">
+            <Image
+              src={category.image}
+              alt={category.name}
+              width={900}
+              height={675}
+              quality={85}
+              className="photo-grade h-56 w-full object-cover md:h-full"
+            />
+            <div className="p-6 sm:p-8">
+              <p className={`label-wide ${isTruck ? "text-saffron" : "text-tamarind"}`}>{category.items.length} items</p>
+              <h2 className="mt-2 font-display text-4xl font-black">{category.name}</h2>
+              <p className={`mt-3 max-w-xl text-sm font-semibold leading-6 ${isTruck ? "text-white/62" : "text-muted"}`}>
+                Current availability can change. Call ahead for specials or larger orders.
+              </p>
+            </div>
+          </div>
+          <div className={`divide-y ${isTruck ? "divide-white/10" : "divide-border"} px-5 py-2 sm:px-8`}>
+            {category.items.map(([name, price, description]) => (
+              <article key={name} className="menu-item-row py-5">
+                <div>
+                  <h3 className="text-lg font-black">{name}</h3>
+                  <p className={`mt-1 max-w-3xl text-sm font-semibold leading-6 ${isTruck ? "text-white/62" : "text-muted"}`}>
+                    {description}
+                  </p>
+                </div>
+                <p className={`font-mono text-base font-bold sm:text-right ${isTruck ? "text-saffron" : "text-tamarind"}`}>{price}</p>
+              </article>
+            ))}
           </div>
         </section>
       ))}
